@@ -3,14 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Parekh Kishan Ranchhodbhai - Full Stack Developer</title>
   <link rel="icon" type="image/png" href="images/kishan new re.jpg">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       --primary-color: #0a192f;
@@ -19,8 +18,6 @@
       --text-primary: #e6f1ff;
       --text-secondary: #8892b0;
       --card-bg: #112240;
-      --text-dark: #333333;
-      --text-light: #666666;
     }
 
     [data-theme="light"] {
@@ -30,8 +27,10 @@
       --text-primary: #1a365d;
       --text-secondary: #4a5568;
       --card-bg: #ffffff;
-      --text-dark: #333333;
-      --text-light: #666666;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -41,16 +40,17 @@
       line-height: 1.6;
       overflow-x: hidden;
       transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-text-size-adjust: 100%;
     }
 
     [data-theme="light"] body {
-      color: var(--text-dark);
+      color: var(--text-primary);
     }
 
     .navbar {
       background-color: var(--secondary-color) !important;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      padding: 1rem 0;
+      padding: 0.75rem 0;
       transition: all 0.3s ease;
     }
 
@@ -62,15 +62,11 @@
     .navbar-brand,
     .nav-link {
       color: var(--text-primary) !important;
-    }
-
-    [data-theme="light"] .navbar-brand,
-    [data-theme="light"] .nav-link {
-      color: var(--text-dark) !important;
+      font-size: 1rem;
     }
 
     .nav-link {
-      margin: 0 0.5rem;
+      margin: 0 0.3rem;
       font-weight: 500;
       position: relative;
     }
@@ -92,10 +88,14 @@
 
     .navbar-toggler {
       border-color: var(--accent-color);
+      padding: 0.25rem 0.5rem;
+      font-size: 1rem;
     }
 
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28100, 255, 218, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      width: 1.2em;
+      height: 1.2em;
     }
 
     [data-theme="light"] .navbar-toggler-icon {
@@ -103,16 +103,16 @@
     }
 
     section {
-      padding: 5rem 0;
-      scroll-margin-top: 70px;
+      padding: 3.5rem 0;
+      scroll-margin-top: 60px;
     }
 
     .section-title {
       color: var(--accent-color);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       position: relative;
       display: inline-block;
-      font-weight: 700;
+      font-size: 1.8rem;
     }
 
     .section-title::after {
@@ -120,7 +120,7 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      bottom: -10px;
+      bottom: -8px;
       left: 0;
       background-color: var(--accent-color);
     }
@@ -133,6 +133,7 @@
       background-color: var(--secondary-color);
       position: relative;
       overflow: hidden;
+      padding-top: 70px;
     }
 
     .hero-content {
@@ -141,31 +142,27 @@
     }
 
     .hero-title {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: 2.2rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-size: 1.4rem;
       color: var(--accent-color);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero-description {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+      max-width: 100%;
+      margin-bottom: 1.8rem;
       color: var(--text-primary);
-    }
-
-    [data-theme="light"] .hero-description {
-      color: var(--text-dark);
     }
 
     .hero-img-container {
       position: relative;
-      max-width: 350px;
+      max-width: 280px;
       margin: 0 auto;
     }
 
@@ -185,12 +182,13 @@
       background-color: transparent;
       color: var(--accent-color);
       border: 1px solid var(--accent-color);
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
       border-radius: 5px;
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
+      margin: 0.3rem;
     }
 
     .btn-primary-custom:hover {
@@ -210,10 +208,11 @@
     }
 
     .about-img {
-      max-width: 300px;
+      max-width: 250px;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
+      margin: 0 auto 1.5rem;
     }
 
     .about-img:hover {
@@ -224,12 +223,9 @@
       color: var(--text-primary);
     }
 
-    [data-theme="light"] .about-text {
-      color: var(--text-dark);
-    }
-
     .about-text p {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
     }
 
     /* Skills Section */
@@ -239,9 +235,9 @@
 
     .skill-item {
       background-color: var(--card-bg);
-      padding: 1.5rem;
+      padding: 1.2rem;
       border-radius: 10px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-left: 3px solid var(--accent-color);
@@ -256,141 +252,18 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
       color: var(--accent-color);
+      font-size: 1.1rem;
     }
 
     .progress {
-      height: 10px;
+      height: 8px;
       background-color: var(--secondary-color);
       border-radius: 5px;
+      margin-bottom: 0.8rem;
     }
 
     .progress-bar {
       background-color: var(--accent-color);
-      transition: width 1.5s ease-in-out;
-    }
-
-    /* Experience Section */
-    #experience {
-      background-color: var(--primary-color);
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 3rem;
-      margin-top: 2rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 7px;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background-color: var(--accent-color);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2.5rem;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -3rem;
-      top: 0.5rem;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: var(--accent-color);
-      border: 3px solid var(--card-bg);
-    }
-
-    .timeline-content {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .timeline-date {
-      color: var(--accent-color);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-title {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text-primary);
-    }
-
-    [data-theme="light"] .timeline-title {
-      color: var(--text-dark);
-    }
-
-    .timeline-description {
-      color: var(--text-secondary);
-      margin-bottom: 0;
-    }
-
-    /* Projects Section */
-    #projects {
-      background-color: var(--primary-color);
-    }
-
-    .project-card {
-      background-color: var(--card-bg);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      margin-bottom: 2rem;
-      height: 100%;
-      border-top: 3px solid var(--accent-color);
-      cursor: pointer;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    }
-
-    .project-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .project-card:hover .project-img {
-      transform: scale(1.05);
-    }
-
-    .project-title {
-      color: var(--accent-color);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .project-tech {
-      margin-bottom: 1rem;
-    }
-
-    .tech-badge {
-      display: inline-block;
-      background-color: rgba(100, 255, 218, 0.1);
-      color: var(--accent-color);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    [data-theme="light"] .tech-badge {
-      background-color: rgba(0, 123, 255, 0.1);
     }
 
     /* Education Section */
@@ -400,7 +273,7 @@
 
     .education-card {
       background-color: var(--card-bg);
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
@@ -415,16 +288,12 @@
     .education-degree {
       color: var(--accent-color);
       font-weight: 600;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
 
     .education-institution {
       color: var(--text-primary);
       font-weight: 500;
-    }
-
-    [data-theme="light"] .education-institution {
-      color: var(--text-dark);
     }
 
     .education-duration {
@@ -435,10 +304,11 @@
     .semester-card {
       background-color: rgba(100, 255, 218, 0.05);
       border-radius: 8px;
-      padding: 0.75rem;
+      padding: 0.6rem;
       text-align: center;
       transition: all 0.3s ease;
       border: 1px solid rgba(100, 255, 218, 0.1);
+      margin-bottom: 0.8rem;
     }
 
     [data-theme="light"] .semester-card {
@@ -456,27 +326,87 @@
     }
 
     .semester-title {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-secondary);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
 
     .semester-grade {
       font-weight: 600;
       color: var(--accent-color);
+      font-size: 0.9rem;
     }
 
     .cgpa-badge {
       background-color: rgba(100, 255, 218, 0.1);
       color: var(--accent-color);
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 20px;
       font-weight: 600;
       display: inline-block;
       margin-top: 1rem;
+      font-size: 0.9rem;
     }
 
     [data-theme="light"] .cgpa-badge {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    /* Projects Section */
+    #projects {
+      background-color: var(--primary-color);
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      margin-bottom: 1.5rem;
+      height: 100%;
+      border-top: 3px solid var(--accent-color);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+
+    .project-title {
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .project-tech {
+      margin-bottom: 0.8rem;
+    }
+
+    .tech-badge {
+      display: inline-block;
+      background-color: rgba(100, 255, 218, 0.1);
+      color: var(--accent-color);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    [data-theme="light"] .tech-badge {
       background-color: rgba(0, 123, 255, 0.1);
     }
 
@@ -487,9 +417,9 @@
 
     .certification-card {
       background-color: var(--card-bg);
-      padding: 1.5rem;
+      padding: 1.2rem;
       border-radius: 10px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
       border-left: 3px solid var(--accent-color);
@@ -503,19 +433,17 @@
     .certification-name {
       color: var(--accent-color);
       font-weight: 600;
+      font-size: 1rem;
     }
 
     .certification-issuer {
       color: var(--text-primary);
-    }
-
-    [data-theme="light"] .certification-issuer {
-      color: var(--text-dark);
+      font-size: 0.9rem;
     }
 
     .certification-date {
       color: var(--text-secondary);
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
 
     /* Contact Section */
@@ -525,7 +453,7 @@
 
     .contact-form {
       background-color: var(--card-bg);
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
@@ -534,27 +462,24 @@
       background-color: var(--secondary-color);
       border: 1px solid var(--text-secondary);
       color: var(--text-primary);
-      margin-bottom: 1.5rem;
-    }
-
-    [data-theme="light"] .form-control {
-      color: var(--text-dark);
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+      padding: 0.7rem;
     }
 
     .form-control:focus {
       background-color: var(--secondary-color);
       color: var(--text-primary);
       border-color: var(--accent-color);
-      box-shadow: 0 0 0 0.25rem rgba(100, 255, 218, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.25);
     }
 
     [data-theme="light"] .form-control:focus {
-      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
-      color: var(--text-dark);
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
 
     .contact-info {
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .contact-icon {
@@ -566,10 +491,7 @@
       color: var(--text-primary);
       text-decoration: none;
       transition: color 0.3s ease;
-    }
-
-    [data-theme="light"] .contact-link {
-      color: var(--text-dark);
+      font-size: 0.95rem;
     }
 
     .contact-link:hover {
@@ -579,13 +501,14 @@
     /* Footer */
     footer {
       background-color: var(--primary-color);
-      padding: 2rem 0;
+      padding: 1.5rem 0;
       text-align: center;
     }
 
     .footer-text {
       color: var(--text-secondary);
       margin-bottom: 0;
+      font-size: 0.9rem;
     }
 
     .social-links {
@@ -594,14 +517,14 @@
 
     .social-link {
       color: var(--text-secondary);
-      margin: 0 0.5rem;
-      font-size: 1.25rem;
+      margin: 0 0.4rem;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background-color: var(--card-bg);
     }
@@ -622,20 +545,16 @@
       border: none;
       color: var(--text-primary);
       cursor: pointer;
-      font-size: 1.25rem;
-      margin-left: 1rem;
+      font-size: 1.1rem;
+      margin-left: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background-color: var(--card-bg);
       transition: all 0.3s ease;
-    }
-
-    [data-theme="light"] .theme-toggle {
-      color: var(--text-dark);
     }
 
     .theme-toggle:hover {
@@ -648,172 +567,114 @@
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     }
 
-    /* Project Modal */
-    .modal-content {
-      background-color: var(--card-bg);
-      color: var(--text-primary);
-      border: none;
-      border-radius: 10px;
-    }
-
-    [data-theme="light"] .modal-content {
-      color: var(--text-dark);
-    }
-
-    .modal-header {
-      border-bottom: 1px solid var(--secondary-color);
-    }
-
-    .modal-footer {
-      border-top: 1px solid var(--secondary-color);
-    }
-
-    .btn-close {
-      filter: invert(1);
-    }
-
-    [data-theme="light"] .btn-close {
-      filter: invert(0);
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 1000;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 991.98px) {
+    /* Mobile-specific adjustments */
+    @media (max-width: 575.98px) {
       section {
-        padding: 4rem 0;
-      }
-      
-      .hero-content {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-      
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      .about-content {
-        flex-direction: column;
-      }
-      
-      .about-img {
-        margin: 0 auto 2rem;
-      }
-      
-      .semester-card {
-        margin-bottom: 1rem;
-      }
-
-      .timeline {
-        padding-left: 2rem;
-      }
-
-      .timeline::before {
-        left: 5px;
-      }
-
-      .timeline-item::before {
-        left: -2rem;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
       }
       
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
       }
       
       .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
       }
       
       .btn-primary-custom {
         display: block;
         width: 100%;
-        margin-bottom: 1rem;
+        margin: 0.5rem 0;
       }
       
-      .btn-primary-custom.me-3 {
-        margin-right: 0 !important;
+      .hero-img-container {
+        max-width: 220px;
+      }
+      
+      .about-img {
+        max-width: 200px;
       }
       
       .education-card {
-        padding: 1.5rem;
+        padding: 1.2rem;
+      }
+      
+      .semester-card {
+        padding: 0.5rem;
       }
       
       .contact-form {
-        padding: 1.5rem;
+        padding: 1.2rem;
       }
       
-      .theme-toggle {
-        margin-left: 0.5rem;
-        width: 35px;
-        height: 35px;
+      .navbar-brand {
+        font-size: 0.9rem;
       }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+      
+      .nav-link {
+        font-size: 0.9rem;
+        margin: 0 0.2rem;
       }
     }
 
-    @media (max-width: 575.98px) {
+    @media (max-width: 767.98px) {
+      .navbar-collapse {
+        background-color: var(--secondary-color);
+        padding: 1rem;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+      }
+      
+      .theme-toggle {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
       .hero-title {
         font-size: 2rem;
       }
       
       .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
       }
       
-      .section-title {
-        font-size: 1.5rem;
+      .hero-img-container {
+        max-width: 250px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .hero-title {
+        font-size: 2.5rem;
       }
       
-      .project-card {
-        margin-bottom: 1.5rem;
+      .hero-img-container {
+        max-width: 300px;
       }
+    }
+
+    /* Fix for mobile touch issues */
+    .btn-primary-custom, .social-link, .theme-toggle {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    /* Prevent horizontal scrolling */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
     }
   </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
@@ -832,9 +693,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#education">Education</a>
@@ -863,7 +721,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-1 order-2">
-          <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+          <div class="hero-content">
             <h1 class="hero-title">Hi, I'm Kishan Parekh</h1>
             <h2 class="hero-subtitle">Full Stack Developer</h2>
             <p class="hero-description">
@@ -871,13 +729,13 @@
               I hold a Bachelor's degree in Computer Applications, completed in April 2025, and am passionate about delivering efficient, scalable, and user-friendly applications.
             </p>
             <div class="d-flex flex-wrap">
-              <a href="#contact" class="btn btn-primary-custom me-3 mb-2">Get In Touch</a>
+              <a href="#contact" class="btn btn-primary-custom me-2 mb-2">Get In Touch</a>
               <a href="resume/r.png" class="btn btn-primary-custom mb-2" download>Download Resume</a>
             </div>
           </div>
         </div>
         <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-          <div class="hero-img-container" data-aos="fade-left" data-aos-duration="1000">
+          <div class="hero-img-container">
             <img src="images/kpbhai.jpg" alt="Kishan Parekh" class="hero-img img-fluid" />
           </div>
         </div>
@@ -888,12 +746,12 @@
   <!-- About Section -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <h2 class="section-title">About Me</h2>
       <div class="row align-items-center">
-        <div class="col-lg-4 mb-4 mb-lg-0 text-center" data-aos="fade-right" data-aos-delay="100">
+        <div class="col-lg-4 mb-4 mb-lg-0 text-center">
           <img src="images/kishan new re.jpg" alt="Kishan Parekh" class="about-img img-fluid" />
         </div>
-        <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
+        <div class="col-lg-8">
           <div class="about-text">
             <p>
               I'm a passionate BCA student with expertise in full stack development.
@@ -936,106 +794,83 @@
   <!-- Skills Section -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+      <h2 class="section-title">My Skills</h2>
       <div class="row">
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-6 col-lg-4">
           <div class="skill-item">
             <h3 class="skill-name">Frontend Development</h3>
             <div class="mb-3">
               <span>HTML</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>CSS</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>JavaScript</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-6 col-lg-4">
           <div class="skill-item">
             <h3 class="skill-name">Backend Development</h3>
             <div class="mb-3">
               <span>PHP</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Node js</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>ASP.NET</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Python</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-6 col-lg-4">
           <div class="skill-item">
             <h3 class="skill-name">Database & Others</h3>
             <div class="mb-3">
               <span>MySQL</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>C/C++</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Java</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-          <div class="timeline-content">
-            <div class="timeline-date">2024 - Present</div>
-            <h3 class="timeline-title">Freelance Web Developer</h3>
-            <p class="timeline-description">Developed responsive websites for clients using modern web technologies including HTML5, CSS3, JavaScript, and PHP. Collaborated with clients to understand requirements and deliver customized solutions.</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
-          <div class="timeline-content">
-            <div class="timeline-date">2023 - 2024</div>
-            <h3 class="timeline-title">College Project Developer</h3>
-            <p class="timeline-description">Led development of a comprehensive Library Management System using PHP and MySQL as part of college coursework. Implemented features including user authentication, book tracking, and administrative functions.</p>
           </div>
         </div>
       </div>
@@ -1045,8 +880,8 @@
   <!-- Education Section -->
   <section id="education">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Education</h2>
-      <div class="education-card" data-aos="zoom-in" data-aos-delay="100">
+      <h2 class="section-title">Education</h2>
+      <div class="education-card">
         <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
           <div>
             <h3 class="education-degree">Bachelor of Computer Applications (BCA)</h3>
@@ -1106,10 +941,10 @@
   <!-- Projects Section -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+      <h2 class="section-title">My Projects</h2>
       <div class="row">
-        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
             <img src="projects/l.jpg" alt="Library Management System" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Library Management System</h3>
@@ -1125,8 +960,8 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
             <img src="projects/po.jpg" alt="Portfolio Website" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Portfolio Website</h3>
@@ -1144,81 +979,12 @@
     </div>
   </section>
 
-  <!-- Project Modals -->
-  <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="projectModal1Label">Library Management System</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img src="projects/l.jpg" alt="Library Management System" class="img-fluid mb-3">
-          <p>A comprehensive Library Management System developed using PHP and MySQL. This system includes features for book management, user registration, borrowing and returning books, and administrative functions.</p>
-          <h6>Key Features:</h6>
-          <ul>
-            <li>User authentication and authorization</li>
-            <li>Book catalog management</li>
-            <li>Borrowing and returning system</li>
-            <li>Fine calculation for overdue books</li>
-            <li>Admin dashboard for reporting</li>
-          </ul>
-          <div class="project-tech mb-3">
-            <span class="tech-badge">PHP</span>
-            <span class="tech-badge">MySQL</span>
-            <span class="tech-badge">HTML</span>
-            <span class="tech-badge">CSS</span>
-            <span class="tech-badge">JavaScript</span>
-            <span class="tech-badge">Bootstrap</span>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="#" class="btn btn-primary-custom">View Project</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="projectModal2Label">Portfolio Website</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img src="projects/po.jpg" alt="Portfolio Website" class="img-fluid mb-3">
-          <p>A responsive and modern portfolio website designed to showcase skills, projects, and professional experience. The website features a clean design with smooth animations and a dark/light mode toggle.</p>
-          <h6>Key Features:</h6>
-          <ul>
-            <li>Fully responsive design</li>
-            <li>Dark/light mode toggle</li>
-            <li>Smooth scroll animations</li>
-            <li>Interactive project showcase</li>
-            <li>Contact form with validation</li>
-          </ul>
-          <div class="project-tech mb-3">
-            <span class="tech-badge">HTML</span>
-            <span class="tech-badge">CSS</span>
-            <span class="tech-badge">JavaScript</span>
-            <span class="tech-badge">Bootstrap</span>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="#" class="btn btn-primary-custom">View Project</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Certifications Section -->
   <section id="certifications">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+      <h2 class="section-title">Certifications</h2>
       <div class="row">
-        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-6 mb-4">
           <div class="certification-card">
             <h3 class="certification-name">Java Course Completion</h3>
             <p class="certification-issuer mb-1">GeeksforGeeks</p>
@@ -1227,7 +993,7 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-6 mb-4">
           <div class="certification-card">
             <h3 class="certification-name">WordPress Website Project</h3>
             <p class="certification-issuer mb-1">Coursera</p>
@@ -1236,7 +1002,7 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-6 mb-4">
           <div class="certification-card">
             <h3 class="certification-name">Accounting Talent Hunt</h3>
             <p class="certification-issuer mb-1">Sardar Patel College</p>
@@ -1245,7 +1011,7 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-md-6 mb-4">
           <div class="certification-card">
             <h3 class="certification-name">Youth Red Cross Member</h3>
             <p class="certification-issuer mb-1">Gujarat Red Cross</p>
@@ -1260,11 +1026,11 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+      <h2 class="section-title">Get In Touch</h2>
       <div class="row">
-        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
+        <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="contact-form">
-            <form id="contactForm">
+            <form>
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" required>
@@ -1285,7 +1051,7 @@
             </form>
           </div>
         </div>
-        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+        <div class="col-lg-6">
           <div class="contact-info">
             <h3 class="mb-4">Contact Information</h3>
             <div class="mb-3">
@@ -1319,21 +1085,8 @@
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <a href="#" class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
-  </a>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
-
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
@@ -1373,14 +1126,6 @@
       } else {
         navbar.classList.remove('scrolled');
       }
-
-      // Back to top button visibility
-      const backToTop = document.getElementById('backToTop');
-      if (window.scrollY > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
     });
     
     // Smooth scrolling for anchor links
@@ -1388,15 +1133,20 @@
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
       });
     });
     
     // Animation for skill progress bars
     function animateSkills() {
       const skillSection = document.querySelector('#skills');
+      if (!skillSection) return;
+      
       const progressBars = document.querySelectorAll('.progress-bar');
 
       const sectionTop = skillSection.getBoundingClientRect().top;
@@ -1407,37 +1157,34 @@
           const value = bar.getAttribute('aria-valuenow');
           bar.style.width = value + '%';
         });
-        window.removeEventListener('scroll', animateSkills); // Remove listener after animation
+        window.removeEventListener('scroll', animateSkills);
       }
     }
 
+    // Initialize skills animation
     window.addEventListener('scroll', animateSkills);
+    animateSkills(); // Check if already in view
 
-    // Trigger once in case already in view
-    animateSkills();
-
-    // Form submission handling
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Simple form validation
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      
-      if (name && email && message) {
-        // Here you would typically send the form data to a server
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-      } else {
-        alert('Please fill in all required fields.');
-      }
+    // Fix for mobile navbar collapse
+    const navLinks = document.querySelectorAll('.nav-link');
+    const menuToggle = document.getElementById('navbarNav');
+    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+    
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992) {
+          bsCollapse.hide();
+        }
+      });
     });
 
-    // Initialize tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl);
+    // Prevent horizontal scrolling
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > document.documentElement.clientWidth) {
+        document.body.style.overflowX = 'hidden';
+      } else {
+        document.body.style.overflowX = 'visible';
+      }
     });
   </script>
 </body>

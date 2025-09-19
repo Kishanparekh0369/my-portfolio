@@ -410,6 +410,51 @@
       background-color: rgba(0, 123, 255, 0.1);
     }
 
+    /* Project buttons */
+    .project-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .project-btn {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .github-btn {
+      background-color: rgba(36, 41, 46, 0.9);
+      color: white;
+      border: 1px solid rgba(36, 41, 46, 0.5);
+    }
+    
+    .github-btn:hover {
+      background-color: rgba(36, 41, 46, 1);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .demo-btn {
+      background-color: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+    }
+    
+    .demo-btn:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    [data-theme="light"] .demo-btn:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
     /* Certifications Section */
     #certifications {
       background-color: var(--primary-color);
@@ -516,7 +561,6 @@
     }
 
     .social-link {
-      color: var(--text-secondary);
       margin: 0 0.4rem;
       font-size: 1.1rem;
       transition: all 0.3s ease;
@@ -530,41 +574,81 @@
     }
 
     .social-link:hover {
-      color: var(--accent-color);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     [data-theme="light"] .social-link:hover {
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     }
 
-    /* Theme Toggle */
+    /* Colorful social icons */
+    .social-link.linkedin {
+      color: #0A66C2;
+    }
+    
+    .social-link.github {
+      color:blue;
+    }
+    
+    .social-link.instagram {
+      color: #E4405F;
+    }
+    
+    .social-link.twitter {
+      color: #1DA1F2;
+    }
+
+    /* Theme Toggle - Fixed */
     .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      cursor: pointer;
-      font-size: 1.1rem;
-      margin-left: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: var(--card-bg);
+      gap: 8px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 50px;
+      background: var(--accent-color);
+      color: var(--primary-color);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .theme-toggle:hover {
-      color: var(--accent-color);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    [data-theme="light"] .theme-toggle:hover {
-      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    [data-theme="light"] .theme-toggle {
+      background: var(--accent-color);
+      color: var(--primary-color);
+    }
+
+    /* Modal Styles */
+    .modal-content {
+      background-color: var(--card-bg);
+      color: var(--text-primary);
+      border: none;
+      border-radius: 10px;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid var(--secondary-color);
+    }
+
+    .modal-footer {
+      border-top: 1px solid var(--secondary-color);
+    }
+
+    .btn-close {
+      filter: invert(1);
+    }
+
+    [data-theme="light"] .btn-close {
+      filter: invert(0);
     }
 
     /* Mobile-specific adjustments */
@@ -572,52 +656,61 @@
       section {
         padding: 2.5rem 0;
       }
-      
+
       .hero-title {
         font-size: 1.8rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1.2rem;
       }
-      
+
       .section-title {
         font-size: 1.6rem;
       }
-      
+
       .btn-primary-custom {
         display: block;
         width: 100%;
         margin: 0.5rem 0;
       }
-      
+
       .hero-img-container {
         max-width: 220px;
       }
-      
+
       .about-img {
         max-width: 200px;
       }
-      
+
       .education-card {
         padding: 1.2rem;
       }
-      
+
       .semester-card {
         padding: 0.5rem;
       }
-      
+
       .contact-form {
         padding: 1.2rem;
       }
-      
+
       .navbar-brand {
         font-size: 0.9rem;
       }
-      
+
       .nav-link {
         font-size: 0.9rem;
         margin: 0 0.2rem;
+      }
+
+      .theme-toggle {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+      
+      .project-buttons {
+        flex-direction: column;
       }
     }
 
@@ -629,10 +722,22 @@
         margin-top: 0.5rem;
       }
       
+      /* Fix for theme toggle button on mobile */
+      .navbar-nav .nav-item:last-child {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(100, 255, 218, 0.2);
+      }
+      
+      [data-theme="light"] .navbar-nav .nav-item:last-child {
+        border-top: 1px solid rgba(0, 123, 255, 0.2);
+      }
+      
       .theme-toggle {
-        margin: 0.5rem 0 0 0;
+        margin: 0;
         width: 100%;
         border-radius: 5px;
+        justify-content: center;
       }
     }
 
@@ -640,11 +745,11 @@
       .hero-title {
         font-size: 2rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1.3rem;
       }
-      
+
       .hero-img-container {
         max-width: 250px;
       }
@@ -654,20 +759,23 @@
       .hero-title {
         font-size: 2.5rem;
       }
-      
+
       .hero-img-container {
         max-width: 300px;
       }
     }
 
     /* Fix for mobile touch issues */
-    .btn-primary-custom, .social-link, .theme-toggle {
+    .btn-primary-custom,
+    .social-link,
+    .theme-toggle {
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
 
     /* Prevent horizontal scrolling */
-    html, body {
+    html,
+    body {
       max-width: 100%;
       overflow-x: hidden;
     }
@@ -706,9 +814,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ms-2">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
               <i class="fas fa-moon"></i>
+              <span class="theme-text">Change Mode</span>
             </button>
           </li>
         </ul>
@@ -725,8 +834,9 @@
             <h1 class="hero-title">Hi, I'm Kishan Parekh</h1>
             <h2 class="hero-subtitle">Full Stack Developer</h2>
             <p class="hero-description">
-              I specialize in building impactful digital solutions using modern web technologies.  
-              I hold a Bachelor's degree in Computer Applications, completed in April 2025, and am passionate about delivering efficient, scalable, and user-friendly applications.
+              ✨ "I specialize in building creative and modern websites that bring ideas to life. Having completed my
+              Bachelor's in Computer Applications and now pursuing my MCA, I'm passionate about learning, experimenting,
+              and delivering user-friendly digital experiences that leave an impact."
             </p>
             <div class="d-flex flex-wrap">
               <a href="#contact" class="btn btn-primary-custom me-2 mb-2">Get In Touch</a>
@@ -753,22 +863,33 @@
         </div>
         <div class="col-lg-8">
           <div class="about-text">
-            <p>
-              I'm a passionate BCA student with expertise in full stack development.
-              My journey in programming began with C and C++, and I've since expanded
-              my skills to include modern web technologies.
-            </p>
-            <p>
-              I developed a comprehensive Library Management System using PHP and MySQL,
-              which enhanced my understanding of database management and backend development.
-              This project was part of my college coursework and gave me hands-on experience
-              in building complete web applications.
-            </p>
-            <p>
-              Currently, I'm focused on mastering JavaScript frameworks like React and Node.js
-              to build more dynamic and scalable web applications. I'm particularly interested
-              in creating efficient, user-friendly interfaces with robust backend functionality.
-            </p>
+            <p>I'm a MCA student with a strong foundation in computer applications and a keen interest in full stack
+              development. Building upon my BCA experience, I am continuously expanding my expertise in modern
+              programming
+              languages, frameworks, and software development practices.</p>
+
+            <p>During my BCA, I developed a Library Management System in PHP, which gave me practical exposure to
+              working
+              with frontend design, backend logic, and database integration. That project helped me strengthen my
+              problem-solving skills and understand how different layers of an application come together.</p>
+
+            <p>Now, in my MCA journey, I am focusing on:
+
+              Exploring modern frameworks like React.js, Node.js, and Express.js for building scalable applications.
+
+              Database management with MySQL and MongoDB.
+
+              Version control & collaboration using Git and GitHub.
+
+              Learning about cloud deployment and APIs to deliver real-world, production-ready solutions.
+
+              I am enthusiastic about working on real-world projects, internships, and collaborations that challenge me
+              to
+              build complete, dynamic, and user-friendly applications.
+
+              Beyond academics, I enjoy playing cricket, debugging coding errors, and exploring video games, which keep
+              me
+              curious, analytical, and motivated. </p>
             <div class="row mt-4">
               <div class="col-md-6">
                 <ul class="list-unstyled">
@@ -779,7 +900,7 @@
               </div>
               <div class="col-md-6">
                 <ul class="list-unstyled">
-                  <li class="mb-2"><strong>Education:</strong> BCA</li>
+                  <li class="mb-2"><strong>Education:</strong> MCA Student</li>
                   <li class="mb-2"><strong>Location:</strong> Samarkha, Anand</li>
                   <li class="mb-2"><strong>Interests:</strong> Web Development, Programming</li>
                 </ul>
@@ -802,73 +923,83 @@
             <div class="mb-3">
               <span>HTML</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>CSS</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>JavaScript</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4">
           <div class="skill-item">
             <h3 class="skill-name">Backend Development</h3>
             <div class="mb-3">
               <span>PHP</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="90" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Node js</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>ASP.NET</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Python</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4">
           <div class="skill-item">
             <h3 class="skill-name">Database & Others</h3>
             <div class="mb-3">
               <span>MySQL</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>C/C++</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Java</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
             </div>
           </div>
@@ -881,21 +1012,37 @@
   <section id="education">
     <div class="container">
       <h2 class="section-title">Education</h2>
+
       <div class="education-card">
+        <div class="text-md-end">
+          <span class="education-duration">2022 - 2025</span>
+        </div>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
           <div>
             <h3 class="education-degree">Bachelor of Computer Applications (BCA)</h3>
             <p class="education-institution">Anand Commerce College, Anand - Sardar Patel University</p>
+            <p>
+
+              Grade: CGPA : 8.81/10.0
+            <p>Activities and societies: Participated in tech seminars,workshops,group coding projects.Activities and
+              societies: Participated in tech seminars,workshops,group coding projects.
+              Completed Bachelor of Computer Applications (BCA) from Anand Commerce College, affiliated with Sardar
+              Patel University. Gained strong foundational and practical knowledge in areas such as programming (C, C++,
+              Java), database management, web development, and computer networks. Actively participated in coding
+              assignments, lab sessions, and team-based academic projects.Developed a final-year project titled Sport
+              Club Management System using ASP.NET (C#), HTML, CSS, Bootstrap, JavaScript, and jQuery.
+          
+
+            This program significantly enhanced my logical thinking, problem-solving abilities, and overall software
+            development skills, preparing me for real-world challenges in the IT industry.</p></p>
           </div>
-          <div class="text-md-end">
-            <span class="education-duration">2022 - 2025</span>
-          </div>
+
         </div>
-        
+
         <div class="cgpa-badge">
           CGPA: 8.81/10.0
         </div>
-        
+
         <div class="row mt-4">
           <div class="col-6 col-md-4 col-lg-2 mb-3">
             <div class="semester-card">
@@ -945,7 +1092,7 @@
       <div class="row">
         <div class="col-md-6 mb-4">
           <div class="project-card">
-            <img src="projects/l.jpg" alt="Library Management System" class="project-img">
+            <img src="projects/OIP1.jpg" alt="Library Management System" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Library Management System</h3>
               <div class="project-tech mb-3">
@@ -955,14 +1102,23 @@
                 <span class="tech-badge">CSS</span>
                 <span class="tech-badge">JavaScript</span>
               </div>
-              <p>A complete system for managing library operations including book tracking, user management, and administrative functions.</p>
+              <p>A complete system for managing library operations including book tracking, user management, and
+                administrative functions.</p>
+              <div class="project-buttons">
+                <a href="https://github.com/Kishanparekh0369/Library-Management-System" class="project-btn github-btn" target="_blank">
+                  <i class="fab fa-github me-1"></i> GitHub
+                </a>
+                <a href="#" class="project-btn demo-btn">
+                  <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 mb-4">
           <div class="project-card">
-            <img src="projects/po.jpg" alt="Portfolio Website" class="project-img">
+            <img src="projects/OIP2.jpg" alt="Portfolio Website" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Portfolio Website</h3>
               <div class="project-tech mb-3">
@@ -971,7 +1127,16 @@
                 <span class="tech-badge">JavaScript</span>
                 <span class="tech-badge">Bootstrap</span>
               </div>
-              <p>A responsive personal portfolio website showcasing skills, projects, and contact information with modern design elements.</p>
+              <p>A responsive personal portfolio website showcasing skills, projects, and contact information with
+                modern design elements.</p>
+              <div class="project-buttons">
+                <a href="https://github.com/Kishanparekh0369/my-portfolio" class="project-btn github-btn" target="_blank">
+                  <i class="fab fa-github me-1"></i> GitHub
+                </a>
+                <a href="https://kishanparekh0369.github.io/my-portfolio/" class="project-btn demo-btn">
+                  <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -992,7 +1157,7 @@
             <p>Completed comprehensive Java programming course covering core concepts and advanced topics.</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 mb-4">
           <div class="certification-card">
             <h3 class="certification-name">WordPress Website Project</h3>
@@ -1001,7 +1166,7 @@
             <p>Built and deployed a complete WordPress website as part of the certification program.</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 mb-4">
           <div class="certification-card">
             <h3 class="certification-name">Accounting Talent Hunt</h3>
@@ -1010,7 +1175,7 @@
             <p>Participated and successfully completed the accounting talent hunt program.</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 mb-4">
           <div class="certification-card">
             <h3 class="certification-name">Youth Red Cross Member</h3>
@@ -1030,7 +1195,7 @@
       <div class="row">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="contact-form">
-            <form>
+            <form id="contactForm">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" required>
@@ -1067,10 +1232,19 @@
               <a href="tel:+919316361979" class="contact-link">+91 9316361979</a>
             </div>
             <div class="social-links mt-4">
-              <a href="www.linkedin.com/in/kishan-parekh-b97190364" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://github.com/Kishanparekh0369" class="social-link"><i class="fab fa-github"></i></a>
-              <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm" class="social-link"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/in/kishan-parekh-b97190364" class="social-link linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/Kishanparekh0369" class="social-link github" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm" 
+                 class="social-link instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -1085,41 +1259,65 @@
     </div>
   </footer>
 
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Message Sent!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
+          <p>Thank you for your message. I'll get back to you as soon as possible!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
+    const themeText = themeToggle.querySelector('.theme-text');
     const body = document.body;
-    
+
     // Check for saved theme preference or respect OS preference
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     // Set initial theme
     if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
       body.setAttribute('data-theme', 'light');
       themeIcon.classList.replace('fa-moon', 'fa-sun');
+      themeText.textContent = 'Dark Mode';
     } else {
       body.removeAttribute('data-theme');
       themeIcon.classList.replace('fa-sun', 'fa-moon');
+      themeText.textContent = 'Light Mode';
     }
-    
+
     // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
       if (body.getAttribute('data-theme') === 'light') {
         body.removeAttribute('data-theme');
         themeIcon.classList.replace('fa-sun', 'fa-moon');
+        themeText.textContent = 'Light Mode';
         localStorage.setItem('theme', 'dark');
       } else {
-        body.setAttribute('data-theme', 'light');
+      body.setAttribute('data-theme', 'light');
         themeIcon.classList.replace('fa-moon', 'fa-sun');
+        themeText.textContent = 'Dark Mode';
         localStorage.setItem('theme', 'light');
       }
     });
-    
+
     // Navbar scroll effect
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -1127,12 +1325,12 @@
         navbar.classList.remove('scrolled');
       }
     });
-    
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           target.scrollIntoView({
@@ -1141,12 +1339,12 @@
         }
       });
     });
-    
+
     // Animation for skill progress bars
     function animateSkills() {
       const skillSection = document.querySelector('#skills');
       if (!skillSection) return;
-      
+
       const progressBars = document.querySelectorAll('.progress-bar');
 
       const sectionTop = skillSection.getBoundingClientRect().top;
@@ -1168,8 +1366,8 @@
     // Fix for mobile navbar collapse
     const navLinks = document.querySelectorAll('.nav-link');
     const menuToggle = document.getElementById('navbarNav');
-    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
-    
+    const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
+
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth < 992) {
@@ -1179,13 +1377,30 @@
     });
 
     // Prevent horizontal scrolling
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       if (window.innerWidth > document.documentElement.clientWidth) {
         document.body.style.overflowX = 'hidden';
       } else {
         document.body.style.overflowX = 'visible';
       }
     });
+
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Here you would normally send the form data to a server
+      // For demonstration, we'll just show the success modal
+      
+      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+      
+      // Reset the form
+      this.reset();
+    });
+
+    // Fix LinkedIn URL
+    document.querySelector('a[href*="linkedin"]').href = "https://www.linkedin.com/in/kishan-parekh-b97190364";
   </script>
 </body>
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       --primary-color: #0a192f;
@@ -21,6 +19,19 @@
       --text-primary: #e6f1ff;
       --text-secondary: #8892b0;
       --card-bg: #112240;
+      --text-dark: #333333;
+      --text-light: #666666;
+    }
+
+    [data-theme="light"] {
+      --primary-color: #f0f7ff;
+      --secondary-color: #e1e9f5;
+      --accent-color: #007bff;
+      --text-primary: #1a365d;
+      --text-secondary: #4a5568;
+      --card-bg: #ffffff;
+      --text-dark: #333333;
+      --text-light: #666666;
     }
 
     body {
@@ -29,6 +40,11 @@
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    [data-theme="light"] body {
+      color: var(--text-dark);
     }
 
     .navbar {
@@ -46,6 +62,11 @@
     .navbar-brand,
     .nav-link {
       color: var(--text-primary) !important;
+    }
+
+    [data-theme="light"] .navbar-brand,
+    [data-theme="light"] .nav-link {
+      color: var(--text-dark) !important;
     }
 
     .nav-link {
@@ -77,6 +98,10 @@
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28100, 255, 218, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
+    [data-theme="light"] .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 123, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
     section {
       padding: 5rem 0;
       scroll-margin-top: 70px;
@@ -87,13 +112,14 @@
       margin-bottom: 2.5rem;
       position: relative;
       display: inline-block;
+      font-weight: 700;
     }
 
     .section-title::after {
       content: '';
       position: absolute;
       width: 100%;
-      height: 1px;
+      height: 2px;
       bottom: -10px;
       left: 0;
       background-color: var(--accent-color);
@@ -130,7 +156,11 @@
       font-size: 1.1rem;
       max-width: 600px;
       margin-bottom: 2rem;
-      color: var(--text-secondary);
+      color: var(--text-primary);
+    }
+
+    [data-theme="light"] .hero-description {
+      color: var(--text-dark);
     }
 
     .hero-img-container {
@@ -169,6 +199,11 @@
       box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
     }
 
+    [data-theme="light"] .btn-primary-custom:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
+
     /* About Section */
     #about {
       background-color: var(--primary-color);
@@ -186,7 +221,11 @@
     }
 
     .about-text {
-      color: var(--text-secondary);
+      color: var(--text-primary);
+    }
+
+    [data-theme="light"] .about-text {
+      color: var(--text-dark);
     }
 
     .about-text p {
@@ -227,6 +266,73 @@
 
     .progress-bar {
       background-color: var(--accent-color);
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Experience Section */
+    #experience {
+      background-color: var(--primary-color);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 3rem;
+      margin-top: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: var(--accent-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -3rem;
+      top: 0.5rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      border: 3px solid var(--card-bg);
+    }
+
+    .timeline-content {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-date {
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    [data-theme="light"] .timeline-title {
+      color: var(--text-dark);
+    }
+
+    .timeline-description {
+      color: var(--text-secondary);
+      margin-bottom: 0;
     }
 
     /* Projects Section */
@@ -243,6 +349,7 @@
       margin-bottom: 2rem;
       height: 100%;
       border-top: 3px solid var(--accent-color);
+      cursor: pointer;
     }
 
     .project-card:hover {
@@ -282,6 +389,10 @@
       margin-bottom: 0.5rem;
     }
 
+    [data-theme="light"] .tech-badge {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
     /* Education Section */
     #education {
       background-color: var(--secondary-color);
@@ -312,6 +423,10 @@
       font-weight: 500;
     }
 
+    [data-theme="light"] .education-institution {
+      color: var(--text-dark);
+    }
+
     .education-duration {
       color: var(--text-secondary);
       font-size: 0.9rem;
@@ -326,9 +441,18 @@
       border: 1px solid rgba(100, 255, 218, 0.1);
     }
 
+    [data-theme="light"] .semester-card {
+      background-color: rgba(0, 123, 255, 0.05);
+      border: 1px solid rgba(0, 123, 255, 0.1);
+    }
+
     .semester-card:hover {
       background-color: rgba(100, 255, 218, 0.1);
       transform: translateY(-3px);
+    }
+
+    [data-theme="light"] .semester-card:hover {
+      background-color: rgba(0, 123, 255, 0.1);
     }
 
     .semester-title {
@@ -350,6 +474,10 @@
       font-weight: 600;
       display: inline-block;
       margin-top: 1rem;
+    }
+
+    [data-theme="light"] .cgpa-badge {
+      background-color: rgba(0, 123, 255, 0.1);
     }
 
     /* Certifications Section */
@@ -381,6 +509,10 @@
       color: var(--text-primary);
     }
 
+    [data-theme="light"] .certification-issuer {
+      color: var(--text-dark);
+    }
+
     .certification-date {
       color: var(--text-secondary);
       font-size: 0.9rem;
@@ -405,11 +537,20 @@
       margin-bottom: 1.5rem;
     }
 
+    [data-theme="light"] .form-control {
+      color: var(--text-dark);
+    }
+
     .form-control:focus {
       background-color: var(--secondary-color);
       color: var(--text-primary);
       border-color: var(--accent-color);
       box-shadow: 0 0 0 0.25rem rgba(100, 255, 218, 0.25);
+    }
+
+    [data-theme="light"] .form-control:focus {
+      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+      color: var(--text-dark);
     }
 
     .contact-info {
@@ -425,6 +566,10 @@
       color: var(--text-primary);
       text-decoration: none;
       transition: color 0.3s ease;
+    }
+
+    [data-theme="light"] .contact-link {
+      color: var(--text-dark);
     }
 
     .contact-link:hover {
@@ -443,41 +588,124 @@
       margin-bottom: 0;
     }
 
-  .social-link {
-  color: #fff;
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
+    .social-links {
+      margin-top: 1rem;
+    }
 
-.social-link.linkedin {
-  background-color: #0077b5;
-}
+    .social-link {
+      color: var(--text-secondary);
+      margin: 0 0.5rem;
+      font-size: 1.25rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+    }
 
-.social-link.github {
-  background-color: #333;
-}
+    .social-link:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+    }
 
-.social-link.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-}
+    [data-theme="light"] .social-link:hover {
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
 
-.social-link.twitter {
-  background-color: #1da1f2;
-}
+    /* Theme Toggle */
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      font-size: 1.25rem;
+      margin-left: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      transition: all 0.3s ease;
+    }
 
-.social-link:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
+    [data-theme="light"] .theme-toggle {
+      color: var(--text-dark);
+    }
 
+    .theme-toggle:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+    }
+
+    [data-theme="light"] .theme-toggle:hover {
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
+
+    /* Project Modal */
+    .modal-content {
+      background-color: var(--card-bg);
+      color: var(--text-primary);
+      border: none;
+      border-radius: 10px;
+    }
+
+    [data-theme="light"] .modal-content {
+      color: var(--text-dark);
+    }
+
+    .modal-header {
+      border-bottom: 1px solid var(--secondary-color);
+    }
+
+    .modal-footer {
+      border-top: 1px solid var(--secondary-color);
+    }
+
+    .btn-close {
+      filter: invert(1);
+    }
+
+    [data-theme="light"] .btn-close {
+      filter: invert(0);
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
 
     /* Responsive Adjustments */
     @media (max-width: 991.98px) {
@@ -505,6 +733,18 @@
       
       .semester-card {
         margin-bottom: 1rem;
+      }
+
+      .timeline {
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        left: 5px;
+      }
+
+      .timeline-item::before {
+        left: -2rem;
       }
     }
 
@@ -537,6 +777,19 @@
       
       .contact-form {
         padding: 1.5rem;
+      }
+      
+      .theme-toggle {
+        margin-left: 0.5rem;
+        width: 35px;
+        height: 35px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
       }
     }
 
@@ -581,17 +834,24 @@
             <a class="nav-link" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
-           
-               <a class="nav-link" href="#education">Education</a>
+            <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#certifications">Certifications</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+              <i class="fas fa-moon"></i>
+            </button>
           </li>
         </ul>
       </div>
@@ -603,22 +863,21 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-1 order-2">
-          <div class="hero-content">
+          <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
             <h1 class="hero-title">Hi, I'm Kishan Parekh</h1>
             <h2 class="hero-subtitle">Full Stack Developer</h2>
-           <p class="hero-description " style="color: white;">
-  I specialize in building impactful digital solutions using modern web technologies.  
-  I hold a Bachelor’s degree in Computer Applications, completed in April 2025, and am passionate about delivering efficient, scalable, and user-friendly applications.
-</p>
-
+            <p class="hero-description">
+              I specialize in building impactful digital solutions using modern web technologies.  
+              I hold a Bachelor's degree in Computer Applications, completed in April 2025, and am passionate about delivering efficient, scalable, and user-friendly applications.
+            </p>
             <div class="d-flex flex-wrap">
               <a href="#contact" class="btn btn-primary-custom me-3 mb-2">Get In Touch</a>
-             <a href="resume/r.png" class="btn btn-primary-custom mb-2" download>Download Resume</a>
-   </div>
+              <a href="resume/r.png" class="btn btn-primary-custom mb-2" download>Download Resume</a>
+            </div>
           </div>
         </div>
         <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-          <div class="hero-img-container">
+          <div class="hero-img-container" data-aos="fade-left" data-aos-duration="1000">
             <img src="images/kpbhai.jpg" alt="Kishan Parekh" class="hero-img img-fluid" />
           </div>
         </div>
@@ -629,25 +888,25 @@
   <!-- About Section -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
       <div class="row align-items-center">
-        <div class="col-lg-4 mb-4 mb-lg-0 text-center">
+        <div class="col-lg-4 mb-4 mb-lg-0 text-center" data-aos="fade-right" data-aos-delay="100">
           <img src="images/kishan new re.jpg" alt="Kishan Parekh" class="about-img img-fluid" />
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
           <div class="about-text">
-            <p style="color: white;">
+            <p>
               I'm a passionate BCA student with expertise in full stack development.
               My journey in programming began with C and C++, and I've since expanded
               my skills to include modern web technologies.
             </p>
-            <p style="color: white;">
+            <p>
               I developed a comprehensive Library Management System using PHP and MySQL,
               which enhanced my understanding of database management and backend development.
               This project was part of my college coursework and gave me hands-on experience
               in building complete web applications.
             </p>
-            <p style="color: white;">
+            <p>
               Currently, I'm focused on mastering JavaScript frameworks like React and Node.js
               to build more dynamic and scalable web applications. I'm particularly interested
               in creating efficient, user-friendly interfaces with robust backend functionality.
@@ -655,16 +914,16 @@
             <div class="row mt-4">
               <div class="col-md-6">
                 <ul class="list-unstyled">
-                  <li class="mb-2"><strong style="color: white;">Name:</strong><p style="color: white;">Parekh Kishan Ranchhodbhai</p></li>
-                  <li class="mb-2"><strong style="color: white;">Email:</strong><p style="color: white;">kishanparekh947@gmail.com</p></li>
-                  <li class="mb-2"><strong style="color: white;">Phone:</strong><p style="color: white;"> +91 9316361979 </p></li>
+                  <li class="mb-2"><strong>Name:</strong> Parekh Kishan Ranchhodbhai</li>
+                  <li class="mb-2"><strong>Email:</strong> kishanparekh947@gmail.com</li>
+                  <li class="mb-2"><strong>Phone:</strong> +91 9316361979</li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <ul class="list-unstyled">
-                  <li class="mb-2"><strong style="color: white;">Education:</strong><p style="color: white;"> BCA </p></li>
-                  <li class="mb-2"><strong style="color: white;">Location:</strong> <p style="color: white;">Samarkha, Anand</p></li>
-                  <li class="mb-2"><strong style="color: white;">Interests:</strong><p style="color: white;"> Web Development, Programming</p></li>
+                  <li class="mb-2"><strong>Education:</strong> BCA</li>
+                  <li class="mb-2"><strong>Location:</strong> Samarkha, Anand</li>
+                  <li class="mb-2"><strong>Interests:</strong> Web Development, Programming</li>
                 </ul>
               </div>
             </div>
@@ -677,87 +936,81 @@
   <!-- Skills Section -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">My Skills</h2>
+      <h2 class="section-title" data-aos="fade-up">My Skills</h2>
       <div class="row">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
           <div class="skill-item">
             <h3 class="skill-name">Frontend Development</h3>
             <div class="mb-3">
               <span>HTML</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>CSS</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>JavaScript</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-              <div class="mb-3">
-              <span>Bootstrap</span>
-              <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <div class="skill-item">
             <h3 class="skill-name">Backend Development</h3>
             <div class="mb-3">
               <span>PHP</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Node js</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>ASP.NET</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Python</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
           <div class="skill-item">
             <h3 class="skill-name">Database & Others</h3>
             <div class="mb-3">
               <span>MySQL</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>C/C++</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="mb-3">
               <span>Java</span>
               <div class="progress mt-1">
-                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
@@ -765,18 +1018,42 @@
       </div>
     </div>
   </section>
-    <!-- Education Section -->
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-content">
+            <div class="timeline-date">2024 - Present</div>
+            <h3 class="timeline-title">Freelance Web Developer</h3>
+            <p class="timeline-description">Developed responsive websites for clients using modern web technologies including HTML5, CSS3, JavaScript, and PHP. Collaborated with clients to understand requirements and deliver customized solutions.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+          <div class="timeline-content">
+            <div class="timeline-date">2023 - 2024</div>
+            <h3 class="timeline-title">College Project Developer</h3>
+            <p class="timeline-description">Led development of a comprehensive Library Management System using PHP and MySQL as part of college coursework. Implemented features including user authentication, book tracking, and administrative functions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
   <section id="education">
     <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="education-card">
+      <h2 class="section-title" data-aos="fade-up">Education</h2>
+      <div class="education-card" data-aos="zoom-in" data-aos-delay="100">
         <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
           <div>
             <h3 class="education-degree">Bachelor of Computer Applications (BCA)</h3>
             <p class="education-institution">Anand Commerce College, Anand - Sardar Patel University</p>
           </div>
           <div class="text-md-end">
-            <span class="education-duration" style="color: white;">2022 - 2025</span>
+            <span class="education-duration">2022 - 2025</span>
           </div>
         </div>
         
@@ -787,37 +1064,37 @@
         <div class="row mt-4">
           <div class="col-6 col-md-4 col-lg-2 mb-3">
             <div class="semester-card">
-              <div class="semester-title" style="color: white;">Semester 1</div>
+              <div class="semester-title">Semester 1</div>
               <div class="semester-grade">8.18 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
             <div class="semester-card">
-              <div class="semester-title" style="color: white;">Semester 2</div>
+              <div class="semester-title">Semester 2</div>
               <div class="semester-grade">8.82 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
             <div class="semester-card">
-              <div class="semester-title" style="color: white;">Semester 3</div>
+              <div class="semester-title">Semester 3</div>
               <div class="semester-grade">8.79 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
             <div class="semester-card">
-              <div class="semester-title" style="color: white;">Semester 4</div>
+              <div class="semester-title">Semester 4</div>
               <div class="semester-grade">8.64 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
             <div class="semester-card">
-              <div class="semester-title" style="color: white;">Semester 5</div>
+              <div class="semester-title">Semester 5</div>
               <div class="semester-grade">9.17 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
             <div class="semester-card">
-              <div class="semester-title" style="color: white;">Semester 6</div>
+              <div class="semester-title">Semester 6</div>
               <div class="semester-grade">9.25 GPA</div>
             </div>
           </div>
@@ -829,10 +1106,10 @@
   <!-- Projects Section -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">My Projects</h2>
+      <h2 class="section-title" data-aos="fade-up">My Projects</h2>
       <div class="row">
-        <div class="col-md-6 mb-4">
-          <div class="project-card">
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
             <img src="projects/l.jpg" alt="Library Management System" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Library Management System</h3>
@@ -844,17 +1121,12 @@
                 <span class="tech-badge">JavaScript</span>
               </div>
               <p>A complete system for managing library operations including book tracking, user management, and administrative functions.</p>
-              <a href="https://github.com/Kishanparekh0369/Library-Management-System.git" 
-   target="_blank" 
-   class="btn btn-primary mt-3">
-  <i class="fab fa-github me-2"></i>View on GitHub
-</a>
             </div>
           </div>
         </div>
         
-        <div class="col-md-6 mb-4">
-          <div class="project-card">
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
             <img src="projects/po.jpg" alt="Portfolio Website" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Portfolio Website</h3>
@@ -865,11 +1137,6 @@
                 <span class="tech-badge">Bootstrap</span>
               </div>
               <p>A responsive personal portfolio website showcasing skills, projects, and contact information with modern design elements.</p>
-            <a href="https://github.com/Kishanparekh0369/my-portfolio.git" 
-   target="_blank" 
-   class="btn btn-primary mt-3">
-  <i class="fab fa-github me-2"></i>View on GitHub
-</a>
             </div>
           </div>
         </div>
@@ -877,14 +1144,81 @@
     </div>
   </section>
 
+  <!-- Project Modals -->
+  <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModal1Label">Library Management System</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="projects/l.jpg" alt="Library Management System" class="img-fluid mb-3">
+          <p>A comprehensive Library Management System developed using PHP and MySQL. This system includes features for book management, user registration, borrowing and returning books, and administrative functions.</p>
+          <h6>Key Features:</h6>
+          <ul>
+            <li>User authentication and authorization</li>
+            <li>Book catalog management</li>
+            <li>Borrowing and returning system</li>
+            <li>Fine calculation for overdue books</li>
+            <li>Admin dashboard for reporting</li>
+          </ul>
+          <div class="project-tech mb-3">
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Bootstrap</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="#" class="btn btn-primary-custom">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModal2Label">Portfolio Website</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="projects/po.jpg" alt="Portfolio Website" class="img-fluid mb-3">
+          <p>A responsive and modern portfolio website designed to showcase skills, projects, and professional experience. The website features a clean design with smooth animations and a dark/light mode toggle.</p>
+          <h6>Key Features:</h6>
+          <ul>
+            <li>Fully responsive design</li>
+            <li>Dark/light mode toggle</li>
+            <li>Smooth scroll animations</li>
+            <li>Interactive project showcase</li>
+            <li>Contact form with validation</li>
+          </ul>
+          <div class="project-tech mb-3">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Bootstrap</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="#" class="btn btn-primary-custom">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Certifications Section -->
   <section id="certifications">
     <div class="container">
-      <h2 class="section-title">Certifications</h2>
+      <h2 class="section-title" data-aos="fade-up">Certifications</h2>
       <div class="row">
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
           <div class="certification-card">
             <h3 class="certification-name">Java Course Completion</h3>
             <p class="certification-issuer mb-1">GeeksforGeeks</p>
@@ -893,7 +1227,7 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
           <div class="certification-card">
             <h3 class="certification-name">WordPress Website Project</h3>
             <p class="certification-issuer mb-1">Coursera</p>
@@ -902,7 +1236,7 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
           <div class="certification-card">
             <h3 class="certification-name">Accounting Talent Hunt</h3>
             <p class="certification-issuer mb-1">Sardar Patel College</p>
@@ -911,7 +1245,7 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
           <div class="certification-card">
             <h3 class="certification-name">Youth Red Cross Member</h3>
             <p class="certification-issuer mb-1">Gujarat Red Cross</p>
@@ -923,52 +1257,60 @@
     </div>
   </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <div class="container">
-    <h2 class="text-center mb-0 fw-bold text-uppercase">Get In Touch</h2>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-6 text-center">
-        <!-- Contact Info -->
-        <div class="contact-info mb-4">
-          <p class="mb-3">
-            <i class="fas fa-map-marker-alt me-2 text-danger"></i>
-            <strong>Samarkha, Anand, Gujarat, India</strong>
-          </p>
-          <p class="mb-3">
-            <i class="fas fa-envelope me-2 text-primary"></i>
-           
-              kishanparekh947@gmail.com
-            </a>
-          </p>
-          <p class="mb-3">
-            <i class="fas fa-phone-alt me-2 text-success"></i>
-           
-              +91 9316361979
-            </a>
-          </p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject">
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary-custom">Send Message</button>
+            </form>
+          </div>
         </div>
-
-        <!-- Social Media Links -->
-        <div class="social-links d-flex justify-content-center flex-wrap gap-3 mt-3">
-          <a href="https://www.linkedin.com/in/kishan-parekh-b97190364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-             class="social-link linkedin" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/Kishanparekh0369" class="social-link github" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm"
-             class="social-link instagram" target="_blank" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="contact-info">
+            <h3 class="mb-4">Contact Information</h3>
+            <div class="mb-3">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <span>Samarkha, Anand, Gujarat, India</span>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-envelope contact-icon"></i>
+              <a href="mailto:kishanparekh947@gmail.com" class="contact-link">kishanparekh947@gmail.com</a>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-phone-alt contact-icon"></i>
+              <a href="tel:+919316361979" class="contact-link">+91 9316361979</a>
+            </div>
+            <div class="social-links mt-4">
+              <a href="www.linkedin.com/in/kishan-parekh-b97190364" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/Kishanparekh0369" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -977,8 +1319,52 @@
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    const body = document.body;
+    
+    // Check for saved theme preference or respect OS preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+      body.setAttribute('data-theme', 'light');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+      body.removeAttribute('data-theme');
+      themeIcon.classList.replace('fa-sun', 'fa-moon');
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+      if (body.getAttribute('data-theme') === 'light') {
+        body.removeAttribute('data-theme');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.setAttribute('data-theme', 'light');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
@@ -986,6 +1372,14 @@
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
+      }
+
+      // Back to top button visibility
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
       }
     });
     
@@ -1000,7 +1394,7 @@
       });
     });
     
-       // Animation for skill progress bars
+    // Animation for skill progress bars
     function animateSkills() {
       const skillSection = document.querySelector('#skills');
       const progressBars = document.querySelectorAll('.progress-bar');
@@ -1021,6 +1415,30 @@
 
     // Trigger once in case already in view
     animateSkills();
+
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simple form validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      if (name && email && message) {
+        // Here you would typically send the form data to a server
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+      } else {
+        alert('Please fill in all required fields.');
+      }
+    });
+
+    // Initialize tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
   </script>
 </body>
 

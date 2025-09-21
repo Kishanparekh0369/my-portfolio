@@ -105,6 +105,14 @@
     section {
       padding: 3.5rem 0;
       scroll-margin-top: 60px;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    /* Section hover effects */
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     .section-title {
@@ -651,6 +659,29 @@
       filter: invert(0);
     }
 
+    /* Animation classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .stagger-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* Mobile-specific adjustments */
     @media (max-width: 575.98px) {
       section {
@@ -711,6 +742,19 @@
 
       .project-buttons {
         flex-direction: column;
+      }
+      
+      /* Fix for mobile navbar - theme toggle stays visible */
+      .navbar-nav .nav-item:last-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+      
+      .theme-toggle {
+        margin-top: 0.5rem;
+        width: auto;
+        border-radius: 50px;
       }
     }
 
@@ -816,8 +860,8 @@
           </li>
           <li class="nav-item ms-2">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-              <i class="fas fa-moon"></i>
-              <span class="theme-text">Change Mode</span>
+              <i class="fas fa-sun"></i>
+              <span class="theme-text">Light Mode</span>
             </button>
           </li>
         </ul>
@@ -831,22 +875,22 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-1 order-2">
           <div class="hero-content">
-            <h1 class="hero-title">Hi, I'm Kishan Parekh</h1>
-            <h2 class="hero-subtitle">Full Stack Developer</h2>
-            <p class="hero-description"><b>
+            <h1 class="hero-title fade-in">Hi, I'm Kishan Parekh</h1>
+            <h2 class="hero-subtitle fade-in"><b>Full Stack Developer</b></h2>
+            <p class="hero-description fade-in"><b>
                 ✨ "I specialize in building creative and modern websites that bring ideas to life. Having completed my
                 Bachelor's in Computer Applications and now pursuing my MCA, I'm passionate about learning,
                 experimenting,
                 and delivering user-friendly digital experiences that leave an impact."
               </b> </p>
-            <div class="d-flex flex-wrap">
+            <div class="d-flex flex-wrap fade-in">
               <a href="#contact" class="btn btn-primary-custom me-2 mb-2"><b>Get In Touch</b></a>
               <a href="resume/r.png" class="btn btn-primary-custom mb-2" download><b>Download Resume</b></a>
             </div>
           </div>
         </div>
         <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-          <div class="hero-img-container">
+          <div class="hero-img-container fade-in">
             <img src="images/kishan new re.jpg" alt="Kishan Parekh" class="hero-img img-fluid" />
           </div>
         </div>
@@ -857,21 +901,21 @@
   <!-- About Section -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title fade-in">About Me</h2>
       <div class="row align-items-center">
         <div class="col-lg-4 mb-4 mb-lg-0 text-center">
-          <img src="images/kpbhai.jpg" alt="Kishan Parekh" class="about-img img-fluid" />
+          <img src="images/kpbhai.jpg" alt="Kishan Parekh" class="about-img img-fluid fade-in" />
         </div>
         <div class="col-lg-8">
           <div class="about-text">
-            <p>
+            <p class="fade-in">
               I'm an <b>MCA student</b> with a strong foundation in <b>computer applications</b> and a keen interest in
               <b>full stack development</b>. Building upon my <b>BCA experience</b>, I am continuously expanding my
               expertise in
               modern programming languages, frameworks, and software development practices.
             </p>
 
-            <p>
+            <p class="fade-in">
               During my BCA, I developed a <b>Library Management System</b> in <b>PHP</b>, which gave me practical
               exposure to
               working with <b>frontend design</b>, <b>backend logic</b>, and <b>database integration</b>. That project
@@ -880,25 +924,25 @@
               together.
             </p>
 
-            <p>
+            <p class="fade-in">
               Now, in my MCA journey, I am focusing on:
             <ul>
-              <li>Exploring modern frameworks like <b>React.js</b>, <b>Node.js</b>, and <b>Express.js</b> for building
+              <li class="fade-in">Exploring modern frameworks like <b>React.js</b>, <b>Node.js</b>, and <b>Express.js</b> for building
                 scalable applications.</li>
-              <li><b>Database management</b> with <b>MySQL</b> and <b>MongoDB</b>.</li>
-              <li><b>Version control & collaboration</b> using <b>Git</b> and <b>GitHub</b>.</li>
-              <li>Learning about <b>cloud deployment</b> and <b>APIs</b> to deliver real-world, production-ready
+              <li class="fade-in"><b>Database management</b> with <b>MySQL</b> and <b>MongoDB</b>.</li>
+              <li class="fade-in"><b>Version control & collaboration</b> using <b>Git</b> and <b>GitHub</b>.</li>
+              <li class="fade-in">Learning about <b>cloud deployment</b> and <b>APIs</b> to deliver real-world, production-ready
                 solutions.</li>
             </ul>
             </p>
 
-            <p>
+            <p class="fade-in">
               I am enthusiastic about working on <b>real-world projects</b>, <b>internships</b>, and
               <b>collaborations</b> that
               challenge me to build complete, dynamic, and user-friendly applications.
             </p>
 
-            <p>
+            <p class="fade-in">
               Beyond academics, I enjoy playing <b>cricket</b>, debugging <b>coding errors</b>, and exploring <b>video
                 games</b>,
               which keep me curious, analytical, and motivated.
@@ -913,10 +957,10 @@
   <!-- Skills Section -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">My Skills</h2>
+      <h2 class="section-title fade-in">My Skills</h2>
       <div class="row">
         <div class="col-md-6 col-lg-4">
-          <div class="skill-item">
+          <div class="skill-item stagger-item">
             <h3 class="skill-name">Frontend Development</h3>
             <div class="mb-3">
               <span>HTML</span>
@@ -943,7 +987,7 @@
         </div>
 
         <div class="col-md-6 col-lg-4">
-          <div class="skill-item">
+          <div class="skill-item stagger-item">
             <h3 class="skill-name">Backend Development</h3>
             <div class="mb-3">
               <span>PHP</span>
@@ -977,7 +1021,7 @@
         </div>
 
         <div class="col-md-6 col-lg-4">
-          <div class="skill-item">
+          <div class="skill-item stagger-item">
             <h3 class="skill-name">Database & Others</h3>
             <div class="mb-3">
               <span>MySQL</span>
@@ -1009,15 +1053,15 @@
   <!-- Education Section -->
   <section id="education">
     <div class="container">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title fade-in">Education</h2>
 
-      <div class="education-card">
+      <div class="education-card fade-in">
         <div class="text-md-end">
-          <span class="education-duration">2022 - 2025</span>
+          <span class="education-degree"><b>Year : 2022 - 2025</b></span>
         </div>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
           <div>
-            <h3 class="education-degree"><b>Bachelor of Computer Applications (BCA)</b></h3>
+            <br><h3 class="education-degree"><b>Bachelor of Computer Applications (BCA)</b></h3>
             <h2 class="education-degree"><b>Sardar Patel University , Vallabh Vidyanagar</b></h2>
             <p class="education-institution"><b>Anand Commerce College, Anand</b></p>
             <p>
@@ -1049,37 +1093,37 @@
 
         <div class="row mt-4">
           <div class="col-6 col-md-4 col-lg-2 mb-3">
-            <div class="semester-card">
+            <div class="semester-card stagger-item">
               <div class="semester-title">Semester 1</div>
               <div class="semester-grade">8.18 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
-            <div class="semester-card">
+            <div class="semester-card stagger-item">
               <div class="semester-title">Semester 2</div>
               <div class="semester-grade">8.82 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
-            <div class="semester-card">
+            <div class="semester-card stagger-item">
               <div class="semester-title">Semester 3</div>
               <div class="semester-grade">8.79 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
-            <div class="semester-card">
+            <div class="semester-card stagger-item">
               <div class="semester-title">Semester 4</div>
               <div class="semester-grade">8.64 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
-            <div class="semester-card">
+            <div class="semester-card stagger-item">
               <div class="semester-title">Semester 5</div>
               <div class="semester-grade">9.17 GPA</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-2 mb-3">
-            <div class="semester-card">
+            <div class="semester-card stagger-item">
               <div class="semester-title">Semester 6</div>
               <div class="semester-grade">9.25 GPA</div>
             </div>
@@ -1092,10 +1136,10 @@
   <!-- Projects Section -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">My Projects</h2>
+      <h2 class="section-title fade-in">My Projects</h2>
       <div class="row">
         <div class="col-md-6 mb-4">
-          <div class="project-card">
+          <div class="project-card stagger-item">
             <img src="projects/OIP1.jpg" alt="Library Management System" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Library Management System</h3>
@@ -1122,7 +1166,7 @@
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="project-card">
+          <div class="project-card stagger-item">
             <img src="projects/OIP2.jpg" alt="Portfolio Website" class="project-img">
             <div class="p-4">
               <h3 class="project-title">Portfolio Website</h3>
@@ -1153,10 +1197,10 @@
   <!-- Certifications Section -->
   <section id="certifications">
     <div class="container">
-      <h2 class="section-title">Certifications</h2>
+      <h2 class="section-title fade-in">Certifications</h2>
       <div class="row">
         <div class="col-md-6 mb-4">
-          <div class="certification-card">
+          <div class="certification-card stagger-item">
             <h3 class="certification-name">Java Course Completion</h3>
             <p class="certification-issuer mb-1">GeeksforGeeks</p>
             <p class="certification-date mb-2">2025</p>
@@ -1165,7 +1209,7 @@
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="certification-card">
+          <div class="certification-card stagger-item">
             <h3 class="certification-name">WordPress Website Project</h3>
             <p class="certification-issuer mb-1">Coursera</p>
             <p class="certification-date mb-2">2025</p>
@@ -1174,7 +1218,7 @@
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="certification-card">
+          <div class="certification-card stagger-item">
             <h3 class="certification-name">Accounting Talent Hunt</h3>
             <p class="certification-issuer mb-1">Sardar Patel College</p>
             <p class="certification-date mb-2">2022</p>
@@ -1183,7 +1227,7 @@
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="certification-card">
+          <div class="certification-card stagger-item">
             <h3 class="certification-name">Youth Red Cross Member</h3>
             <p class="certification-issuer mb-1">Gujarat Red Cross</p>
             <p class="certification-date mb-2">2023-2024</p>
@@ -1197,10 +1241,10 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
+      <h2 class="section-title fade-in">Get In Touch</h2>
       <div class="row">
         <div class="col-lg-6 mb-4 mb-lg-0">
-          <div class="contact-form">
+          <div class="contact-form fade-in">
             <form id="contactForm">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -1223,7 +1267,7 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="contact-info">
+          <div class="contact-info fade-in">
             <h3 class="mb-4">Contact Information</h3>
             <div class="mb-3">
               <i class="fas fa-map-marker-alt contact-icon"></i>
@@ -1287,39 +1331,50 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Set default theme to dark mode
+    document.body.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+    
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
     const themeText = themeToggle.querySelector('.theme-text');
-    const body = document.body;
 
-    // Check for saved theme preference or respect OS preference
+    // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    // Set initial theme
-    if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
-      body.setAttribute('data-theme', 'light');
+    // Set initial theme based on saved preference
+    if (savedTheme === 'light') {
+      document.body.setAttribute('data-theme', 'light');
       themeIcon.classList.replace('fa-moon', 'fa-sun');
       themeText.textContent = 'Dark Mode';
     } else {
-      body.removeAttribute('data-theme');
+      document.body.removeAttribute('data-theme');
       themeIcon.classList.replace('fa-sun', 'fa-moon');
       themeText.textContent = 'Light Mode';
     }
 
     // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
-      if (body.getAttribute('data-theme') === 'light') {
-        body.removeAttribute('data-theme');
+      if (document.body.getAttribute('data-theme') === 'light') {
+        document.body.removeAttribute('data-theme');
         themeIcon.classList.replace('fa-sun', 'fa-moon');
         themeText.textContent = 'Light Mode';
         localStorage.setItem('theme', 'dark');
       } else {
-        body.setAttribute('data-theme', 'light');
+        document.body.setAttribute('data-theme', 'light');
         themeIcon.classList.replace('fa-moon', 'fa-sun');
         themeText.textContent = 'Dark Mode';
         localStorage.setItem('theme', 'light');
+      }
+      
+      // Close mobile navbar after theme toggle
+      if (window.innerWidth < 992) {
+        const navbarCollapse = document.getElementById('navbarNav');
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) {
+          bsCollapse.hide();
+        }
       }
     });
 
@@ -1366,8 +1421,36 @@
       }
     }
 
-    // Initialize skills animation
-    window.addEventListener('scroll', animateSkills);
+    // Scroll animation for elements
+    function checkScroll() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const staggerElements = document.querySelectorAll('.stagger-item');
+      
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        
+        if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+          element.classList.add('visible');
+        }
+      });
+      
+      // Animate stagger items with a delay
+      staggerElements.forEach((element, index) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        
+        if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+          setTimeout(() => {
+            element.classList.add('visible');
+          }, index * 150); // 150ms delay between each item
+        }
+      });
+    }
+
+    // Initialize scroll animations
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
     animateSkills(); // Check if already in view
 
     // Fix for mobile navbar collapse

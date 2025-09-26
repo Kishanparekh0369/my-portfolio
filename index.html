@@ -593,18 +593,22 @@
     /* Colorful social icons */
     .social-link.linkedin {
       color: #0A66C2;
+      background-color: rgba(10, 102, 194, 0.1);
     }
 
     .social-link.github {
-      color: blue;
+      color: #333;
+      background-color: rgba(51, 51, 51, 0.1);
     }
 
     .social-link.instagram {
-      color: palevioletred;
+      color: #E4405F;
+      background-color: rgba(228, 64, 95, 0.1);
     }
 
     .social-link.twitter {
       color: #1DA1F2;
+      background-color: rgba(29, 161, 242, 0.1);
     }
 
     /* Theme Toggle - Fixed */
@@ -659,24 +663,24 @@
       filter: invert(0);
     }
 
-    /* Animation classes */
+    /* Animation classes - Improved with medium speed */
     .fade-in {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    
+
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .stagger-item {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    
+
     .stagger-item.visible {
       opacity: 1;
       transform: translateY(0);
@@ -743,14 +747,14 @@
       .project-buttons {
         flex-direction: column;
       }
-      
+
       /* Fix for mobile navbar - theme toggle stays visible */
       .navbar-nav .nav-item:last-child {
         margin-top: 0;
         padding-top: 0;
         border-top: none;
       }
-      
+
       .theme-toggle {
         margin-top: 0.5rem;
         width: auto;
@@ -927,11 +931,14 @@
             <p class="fade-in">
               Now, in my MCA journey, I am focusing on:
             <ul>
-              <li class="fade-in">Exploring modern frameworks like <b>React.js</b>, <b>Node.js</b>, and <b>Express.js</b> for building
-                scalable applications.</li>
+              <li class="fade-in">Exploring modern frameworks like <b>React.js</b>, <b>Node.js</b>, and
+                <b>Express.js</b> for building
+                scalable applications.
+              </li>
               <li class="fade-in"><b>Database management</b> with <b>MySQL</b> and <b>MongoDB</b>.</li>
               <li class="fade-in"><b>Version control & collaboration</b> using <b>Git</b> and <b>GitHub</b>.</li>
-              <li class="fade-in">Learning about <b>cloud deployment</b> and <b>APIs</b> to deliver real-world, production-ready
+              <li class="fade-in">Learning about <b>cloud deployment</b> and <b>APIs</b> to deliver real-world,
+                production-ready
                 solutions.</li>
             </ul>
             </p>
@@ -1061,7 +1068,8 @@
         </div>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
           <div>
-            <br><h3 class="education-degree"><b>Bachelor of Computer Applications (BCA)</b></h3>
+            <br>
+            <h3 class="education-degree"><b>Bachelor of Computer Applications (BCA)</b></h3>
             <h2 class="education-degree"><b>Sardar Patel University , Vallabh Vidyanagar</b></h2>
             <p class="education-institution"><b>Anand Commerce College, Anand</b></p>
             <p>
@@ -1281,22 +1289,29 @@
               <i class="fas fa-phone-alt contact-icon"></i>
               <a href="tel:+919316361979" class="contact-link">+91 9316361979</a>
             </div>
-            <div class="social-links mt-4">
-              <a href="https://www.linkedin.com/in/kishan-parekh-b97190364" class="social-link linkedin"
-                target="_blank">
-                <i class="fab fa-linkedin-in"></i>
+            <div>
+              <a href="https://www.linkedin.com/in/kishan-parekh-b97190364" target="_blank"
+                style="text-decoration:none; display:inline-block; margin:5px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="35" height="35"
+                  style="transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'"
+                  onmouseout="this.style.transform='scale(1)'">
               </a>
-              <a href="https://github.com/Kishanparekh0369" class="social-link github" target="_blank">
-                <i class="fab fa-github"></i>
+
+              <a href="https://github.com/Kishanparekh0369" target="_blank"
+                style="text-decoration:none; display:inline-block; margin:5px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" width="35" height="35"
+                  style="transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'"
+                  onmouseout="this.style.transform='scale(1)'">
               </a>
+
               <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm"
-                class="social-link instagram" target="_blank">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="social-link twitter">
-                <i class="fab fa-twitter"></i>
+                target="_blank" style="text-decoration:none; display:inline-block; margin:5px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="35" height="35"
+                  style="transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'"
+                  onmouseout="this.style.transform='scale(1)'">
               </a>
             </div>
+
           </div>
         </div>
       </div>
@@ -1334,7 +1349,7 @@
     // Set default theme to dark mode
     document.body.removeAttribute('data-theme');
     localStorage.setItem('theme', 'dark');
-    
+
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
@@ -1367,7 +1382,7 @@
         themeText.textContent = 'Dark Mode';
         localStorage.setItem('theme', 'light');
       }
-      
+
       // Close mobile navbar after theme toggle
       if (window.innerWidth < 992) {
         const navbarCollapse = document.getElementById('navbarNav');
@@ -1421,29 +1436,29 @@
       }
     }
 
-    // Scroll animation for elements
+    // Improved scroll animation for elements with medium speed
     function checkScroll() {
       const fadeElements = document.querySelectorAll('.fade-in');
       const staggerElements = document.querySelectorAll('.stagger-item');
-      
+
       fadeElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
-        
+
         if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
           element.classList.add('visible');
         }
       });
-      
+
       // Animate stagger items with a delay
       staggerElements.forEach((element, index) => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
-        
+
         if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
           setTimeout(() => {
             element.classList.add('visible');
-          }, index * 150); // 150ms delay between each item
+          }, index * 100); // Reduced to 100ms for medium speed
         }
       });
     }

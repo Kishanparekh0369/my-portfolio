@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Parekh Kishan Ranchhodbhai - Full Stack Developer</title>
+  <title>Kishan Parekh - Full Stack Developer</title>
   <link rel="icon" type="image/png" href="images/kishan new re.jpg">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,29 +12,45 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     :root {
-      --primary-color: #0a192f;
-      --secondary-color: #172a45;
-      --accent-color: #64ffda;
-      --text-primary: #e6f1ff;
-      --text-secondary: #8892b0;
-      --card-bg: #112240;
+      --primary-color: #0f172a;
+      --secondary-color: #1e293b;
+      --accent-color: #3b82f6;
+      --accent-hover: #2563eb;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --card-bg: #1e293b;
+      --gradient-1: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      --gradient-2: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      --gradient-3: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --shadow-2: 0 15px 35px rgba(0, 0, 0, 0.4);
+      --shadow-3: 0 5px 15px rgba(59, 130, 246, 0.3);
+      --border-radius: 12px;
     }
 
     [data-theme="light"] {
-      --primary-color: #f0f7ff;
-      --secondary-color: #e1e9f5;
-      --accent-color: #007bff;
-      --text-primary: #1a365d;
-      --text-secondary: #4a5568;
+      --primary-color: #f8fafc;
+      --secondary-color: #e2e8f0;
+      --accent-color: #3b82f6;
+      --accent-hover: #2563eb;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
       --card-bg: #ffffff;
+      --gradient-1: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      --gradient-2: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      --gradient-3: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-2: 0 15px 35px rgba(0, 0, 0, 0.15);
+      --shadow-3: 0 5px 15px rgba(59, 130, 246, 0.2);
     }
 
     * {
       -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--primary-color);
       color: var(--text-primary);
       line-height: 1.6;
@@ -43,32 +59,52 @@
       -webkit-text-size-adjust: 100%;
     }
 
-    [data-theme="light"] body {
-      color: var(--text-primary);
-    }
-
+    /* Modern navbar with glass effect */
     .navbar {
-      background-color: var(--secondary-color) !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      padding: 0.75rem 0;
-      transition: all 0.3s ease;
+      background-color: rgba(15, 23, 42, 0) !important;
+      backdrop-filter: blur(0px);
+      box-shadow: none;
+      padding: 1.5rem 0;
+      transition: all 0.4s ease;
     }
 
     .navbar.scrolled {
-      padding: 0.5rem 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      background-color: rgba(15, 23, 42, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      padding: 0.75rem 0;
     }
 
-    .navbar-brand,
+    [data-theme="light"] .navbar {
+      background-color: rgba(248, 250, 252, 0) !important;
+    }
+
+    [data-theme="light"] .navbar.scrolled {
+      background-color: rgba(248, 250, 252, 0.95) !important;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled .navbar-brand {
+      font-size: 1.3rem;
+    }
+
     .nav-link {
       color: var(--text-primary) !important;
-      font-size: 1rem;
-    }
-
-    .nav-link {
-      margin: 0 0.3rem;
       font-weight: 500;
       position: relative;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+      padding: 0.5rem 0.8rem !important;
+      border-radius: 8px;
     }
 
     .nav-link::after {
@@ -78,7 +114,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: var(--accent-color);
+      background: var(--gradient-2);
       transition: width 0.3s ease;
     }
 
@@ -86,62 +122,100 @@
       width: 100%;
     }
 
+    .nav-link:hover {
+      color: var(--accent-color) !important;
+    }
+
     .navbar-toggler {
-      border-color: var(--accent-color);
+      border: none;
       padding: 0.25rem 0.5rem;
-      font-size: 1rem;
+      background: transparent;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
     }
 
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28100, 255, 218, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       width: 1.2em;
       height: 1.2em;
     }
 
     [data-theme="light"] .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 123, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2815, 23, 42, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-    section {
-      padding: 3.5rem 0;
-      scroll-margin-top: 60px;
-      transition: all 0.3s ease;
-      border-radius: 8px;
+    /* Theme toggle - Modern design */
+    .theme-toggle-container {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
     }
 
-    /* Section hover effects */
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .section-title {
-      color: var(--accent-color);
-      margin-bottom: 2rem;
+    .theme-toggle {
       position: relative;
-      display: inline-block;
-      font-size: 1.8rem;
+      width: 60px;
+      height: 30px;
+      border-radius: 50px;
+      background: var(--gradient-2);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-3);
     }
 
-    .section-title::after {
+    .theme-toggle::after {
       content: '';
       position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -8px;
-      left: 0;
-      background-color: var(--accent-color);
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: white;
+      transition: transform 0.3s ease;
     }
 
-    /* Hero Section */
+    [data-theme="light"] .theme-toggle::after {
+      transform: translateX(30px);
+    }
+
+    .theme-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: white;
+    }
+
+    .sun-icon {
+      left: 8px;
+    }
+
+    .moon-icon {
+      right: 8px;
+    }
+
+    /* Hero section with modern design */
     #hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background-color: var(--secondary-color);
+      background: var(--gradient-1);
       position: relative;
       overflow: hidden;
-      padding-top: 70px;
+      padding-top: 0;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
     }
 
     .hero-content {
@@ -150,81 +224,136 @@
     }
 
     .hero-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero-subtitle {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
       color: var(--accent-color);
-      margin-bottom: 1.2rem;
     }
 
     .hero-description {
-      font-size: 1rem;
+      font-size: 1.1rem;
       max-width: 100%;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
       color: var(--text-primary);
+      line-height: 1.8;
     }
 
     .hero-img-container {
       position: relative;
-      max-width: 380px;
+      max-width: 400px;
       margin: 0 auto;
     }
 
     .hero-img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      border-radius: 20px;
+      box-shadow: var(--shadow-2);
+      transition: transform 0.5s ease;
+      border: 3px solid transparent;
+      background: var(--gradient-2);
+      padding: 5px;
     }
 
     .hero-img:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px) scale(1.02);
     }
 
+    /* Modern buttons */
     .btn-primary-custom {
-      background-color: transparent;
+      background: transparent;
       color: var(--accent-color);
-      border: 1px solid var(--accent-color);
-      padding: 0.7rem 1.2rem;
-      font-size: 0.9rem;
-      border-radius: 5px;
+      border: 2px solid var(--accent-color);
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 50px;
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
-      margin: 0.3rem;
+      margin: 0.5rem;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-primary-custom::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--gradient-2);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn-primary-custom:hover::before {
+      width: 100%;
     }
 
     .btn-primary-custom:hover {
-      background-color: rgba(100, 255, 218, 0.1);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-3);
     }
 
-    [data-theme="light"] .btn-primary-custom:hover {
-      background-color: rgba(0, 123, 255, 0.1);
-      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    /* Section styling */
+    section {
+      padding: 5rem 0;
+      scroll-margin-top: 80px;
+      transition: all 0.3s ease;
     }
 
-    /* About Section */
+    .section-title {
+      color: var(--accent-color);
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 4px;
+      bottom: -10px;
+      left: 0;
+      background: var(--gradient-2);
+      border-radius: 2px;
+    }
+
+    /* About section */
     #about {
-      background-color: var(--primary-color);
+      background: var(--gradient-1);
     }
 
     .about-img {
-      max-width: 350px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-      margin: 0 auto 1.5rem;
+      max-width: 380px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-2);
+      transition: transform 0.5s ease;
+      margin: 0 auto 2rem;
+      border: 3px solid transparent;
+      background: var(--gradient-2);
+      padding: 5px;
     }
 
     .about-img:hover {
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
 
     .about-text {
@@ -232,442 +361,474 @@
     }
 
     .about-text p {
-      margin-bottom: 1.2rem;
-      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
     }
 
-    /* Skills Section */
+    /* Skills section */
     #skills {
-      background-color: var(--secondary-color);
+      background: var(--gradient-1);
     }
 
     .skill-item {
       background-color: var(--card-bg);
-      padding: 1.2rem;
-      border-radius: 10px;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-left: 3px solid var(--accent-color);
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-2);
+      opacity: 0.05;
+      z-index: 0;
     }
 
     .skill-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-2);
     }
 
     .skill-name {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
       color: var(--accent-color);
-      font-size: 1.1rem;
+      font-size: 1.3rem;
+      position: relative;
+      z-index: 1;
     }
 
     .progress {
-      height: 8px;
+      height: 10px;
       background-color: var(--secondary-color);
-      border-radius: 5px;
-      margin-bottom: 0.8rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
     }
 
     .progress-bar {
-      background-color: var(--accent-color);
+      background: var(--gradient-2);
+      border-radius: 10px;
+      transition: width 1.5s ease-in-out;
     }
 
-    /* Education Section */
+    /* Education section */
     #education {
-      background-color: var(--secondary-color);
+      background: var(--gradient-1);
     }
 
     .education-card {
       background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-1);
       transition: all 0.3s ease;
-      border-left: 3px solid var(--accent-color);
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .education-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-2);
+      opacity: 0.05;
+      z-index: 0;
     }
 
     .education-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-2);
     }
 
     .education-degree {
       color: var(--accent-color);
-      font-weight: 600;
-      font-size: 1.2rem;
+      font-weight: 700;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
     }
 
     .education-institution {
       color: var(--text-primary);
-      font-weight: 500;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
     }
 
     .education-duration {
       color: var(--text-secondary);
-      font-size: 0.9rem;
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     .semester-card {
-      background-color: rgba(100, 255, 218, 0.05);
-      border-radius: 8px;
-      padding: 0.6rem;
+      background-color: rgba(59, 130, 246, 0.1);
+      border-radius: 10px;
+      padding: 1rem;
       text-align: center;
       transition: all 0.3s ease;
-      border: 1px solid rgba(100, 255, 218, 0.1);
-      margin-bottom: 0.8rem;
+      border: 2px solid rgba(59, 130, 246, 0.2);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     [data-theme="light"] .semester-card {
-      background-color: rgba(0, 123, 255, 0.05);
-      border: 1px solid rgba(0, 123, 255, 0.1);
+      background-color: rgba(59, 130, 246, 0.1);
+      border: 2px solid rgba(59, 130, 246, 0.2);
     }
 
     .semester-card:hover {
-      background-color: rgba(100, 255, 218, 0.1);
-      transform: translateY(-3px);
-    }
-
-    [data-theme="light"] .semester-card:hover {
-      background-color: rgba(0, 123, 255, 0.1);
+      background-color: rgba(59, 130, 246, 0.2);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-3);
     }
 
     .semester-title {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: var(--text-secondary);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.5rem;
     }
 
     .semester-grade {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--accent-color);
-      font-size: 0.9rem;
+      font-size: 1.1rem;
     }
 
     .cgpa-badge {
-      background-color: rgba(100, 255, 218, 0.1);
-      color: var(--accent-color);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-weight: 600;
+      background: var(--gradient-2);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 700;
       display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.9rem;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-3);
+      position: relative;
+      z-index: 1;
     }
 
-    [data-theme="light"] .cgpa-badge {
-      background-color: rgba(0, 123, 255, 0.1);
-    }
-
-    /* Projects Section */
+    /* Projects section */
     #projects {
-      background-color: var(--primary-color);
+      background: var(--gradient-1);
     }
 
     .project-card {
       background-color: var(--card-bg);
-      border-radius: 10px;
+      border-radius: var(--border-radius);
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      /*transition: all 0.3s ease;*/
-      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-1);
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
       height: 100%;
-      border-top: 3px solid var(--accent-color);
+      border-top: 4px solid var(--accent-color);
+      position: relative;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-2);
+      opacity: 0.05;
+      z-index: 0;
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transform: translateY(-15px);
+      box-shadow: var(--shadow-2);
     }
 
     .project-img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
     .project-card:hover .project-img {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     .project-title {
       color: var(--accent-color);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      position: relative;
+      z-index: 1;
     }
 
     .project-tech {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     .tech-badge {
       display: inline-block;
-      background-color: rgba(100, 255, 218, 0.1);
-      color: var(--accent-color);
-      padding: 0.2rem 0.6rem;
+      background: var(--gradient-2);
+      color: white;
+      padding: 0.3rem 0.8rem;
       border-radius: 20px;
-      font-size: 0.7rem;
-      margin-right: 0.4rem;
-      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
     }
 
-    [data-theme="light"] .tech-badge {
-      background-color: rgba(0, 123, 255, 0.1);
+    .project-card p {
+      position: relative;
+      z-index: 1;
     }
 
     /* Project buttons */
     .project-buttons {
       display: flex;
       gap: 10px;
-      margin-top: 15px;
+      margin-top: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     .project-btn {
       flex: 1;
       text-align: center;
-      padding: 8px 12px;
-      border-radius: 5px;
+      padding: 10px 15px;
+      border-radius: 50px;
       font-size: 0.9rem;
       transition: all 0.3s ease;
       text-decoration: none;
+      font-weight: 600;
     }
 
     .github-btn {
-      background-color: rgba(36, 41, 46, 0.9);
+      background: #24292e;
       color: white;
-      border: 1px solid rgba(36, 41, 46, 0.5);
+      border: 2px solid #24292e;
     }
 
     .github-btn:hover {
-      background-color: rgba(36, 41, 46, 1);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background: transparent;
+      color: #24292e;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(36, 41, 46, 0.3);
     }
 
     .demo-btn {
-      background-color: transparent;
+      background: transparent;
       color: var(--accent-color);
-      border: 1px solid var(--accent-color);
+      border: 2px solid var(--accent-color);
     }
 
     .demo-btn:hover {
-      background-color: rgba(100, 255, 218, 0.1);
-      transform: translateY(-2px);
+      background: var(--gradient-2);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-3);
     }
 
-    [data-theme="light"] .demo-btn:hover {
-      background-color: rgba(0, 123, 255, 0.1);
-    }
-
-    /* Certifications Section */
+    /* Certifications section */
     #certifications {
-      background-color: var(--primary-color);
+      background: var(--gradient-1);
     }
 
     .certification-card {
       background-color: var(--card-bg);
-      padding: 1.2rem;
-      border-radius: 10px;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-1);
       transition: all 0.3s ease;
-      border-left: 3px solid var(--accent-color);
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certification-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-2);
+      opacity: 0.05;
+      z-index: 0;
     }
 
     .certification-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-2);
     }
 
     .certification-name {
       color: var(--accent-color);
-      font-weight: 600;
-      font-size: 1rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1;
     }
 
     .certification-issuer {
       color: var(--text-primary);
-      font-size: 0.9rem;
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     .certification-date {
       color: var(--text-secondary);
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Contact Section */
+    .certification-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Contact section */
     #contact {
-      background-color: var(--secondary-color);
+      background: var(--gradient-1);
     }
 
     .contact-form {
       background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-2);
+      opacity: 0.05;
+      z-index: 0;
     }
 
     .form-control {
       background-color: var(--secondary-color);
-      border: 1px solid var(--text-secondary);
+      border: 2px solid var(--text-secondary);
       color: var(--text-primary);
-      margin-bottom: 1.2rem;
-      font-size: 0.9rem;
-      padding: 0.7rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
     }
 
     .form-control:focus {
       background-color: var(--secondary-color);
       color: var(--text-primary);
       border-color: var(--accent-color);
-      box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.25);
-    }
-
-    [data-theme="light"] .form-control:focus {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
     }
 
     .contact-info {
       margin-top: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     .contact-icon {
       color: var(--accent-color);
-      margin-right: 0.5rem;
+      margin-right: 0.8rem;
+      font-size: 1.2rem;
     }
 
     .contact-link {
       color: var(--text-primary);
       text-decoration: none;
       transition: color 0.3s ease;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
+      font-weight: 500;
     }
 
     .contact-link:hover {
       color: var(--accent-color);
     }
 
+    /* Social media icons */
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1.5rem;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gradient-2);
+      color: white;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: var(--shadow-3);
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: var(--shadow-2);
+    }
+
     /* Footer */
     footer {
-      background-color: var(--primary-color);
-      padding: 1.5rem 0;
+      background: var(--gradient-1);
+      padding: 2rem 0;
       text-align: center;
+      border-top: 1px solid var(--secondary-color);
     }
 
     .footer-text {
       color: var(--text-secondary);
       margin-bottom: 0;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
-    .social-links {
-      margin-top: 1rem;
-    }
-
-    .social-link {
-      margin: 0 0.4rem;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: var(--card-bg);
-    }
-
-    .social-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    [data-theme="light"] .social-link:hover {
-      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
-    }
-
-    /* Colorful social icons */
-    .social-link.linkedin {
-      color: #0A66C2;
-      background-color: rgba(10, 102, 194, 0.1);
-    }
-
-    .social-link.github {
-      color: #333;
-      background-color: rgba(51, 51, 51, 0.1);
-    }
-
-    .social-link.instagram {
-      color: #E4405F;
-      background-color: rgba(228, 64, 95, 0.1);
-    }
-
-    .social-link.twitter {
-      color: #1DA1F2;
-      background-color: rgba(29, 161, 242, 0.1);
-    }
-
-    /* Theme Toggle - Fixed */
-    .theme-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 50px;
-      background: var(--accent-color);
-      color: var(--primary-color);
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    [data-theme="light"] .theme-toggle {
-      background: var(--accent-color);
-      color: var(--primary-color);
-    }
-
-    /* Modal Styles */
-    .modal-content {
-      background-color: var(--card-bg);
-      color: var(--text-primary);
-      border: none;
-      border-radius: 10px;
-    }
-
-    .modal-header {
-      border-bottom: 1px solid var(--secondary-color);
-    }
-
-    .modal-footer {
-      border-top: 1px solid var(--secondary-color);
-    }
-
-    .btn-close {
-      filter: invert(1);
-    }
-
-    [data-theme="light"] .btn-close {
-      filter: invert(0);
-    }
-
-    /* Animation classes - Improved with medium speed */
+    /* Animation classes */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .fade-in.visible {
@@ -678,7 +839,7 @@
     .stagger-item {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .stagger-item.visible {
@@ -686,22 +847,45 @@
       transform: translateY(0);
     }
 
+    /* WhatsApp button */
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      color: white;
+    }
+
     /* Mobile-specific adjustments */
     @media (max-width: 575.98px) {
       section {
-        padding: 2.5rem 0;
+        padding: 3rem 0;
       }
 
       .hero-title {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
       }
 
       .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       .section-title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
 
       .btn-primary-custom {
@@ -711,101 +895,86 @@
       }
 
       .hero-img-container {
-        max-width: 220px;
+        max-width: 250px;
       }
 
       .about-img {
-        max-width: 200px;
+        max-width: 250px;
       }
 
       .education-card {
-        padding: 1.2rem;
+        padding: 1.5rem;
       }
 
       .semester-card {
-        padding: 0.5rem;
+        padding: 0.8rem;
       }
 
       .contact-form {
-        padding: 1.2rem;
+        padding: 1.5rem;
       }
 
       .navbar-brand {
-        font-size: 0.9rem;
-      }
-
-      .nav-link {
-        font-size: 0.9rem;
-        margin: 0 0.2rem;
-      }
-
-      .theme-toggle {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+        font-size: 1.1rem;
       }
 
       .project-buttons {
         flex-direction: column;
       }
 
-      /* Fix for mobile navbar - theme toggle stays visible */
-      .navbar-nav .nav-item:last-child {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: none;
+      .theme-toggle-container {
+        margin-left: 0.5rem;
       }
 
       .theme-toggle {
-        margin-top: 0.5rem;
-        width: auto;
-        border-radius: 50px;
+        width: 50px;
+        height: 25px;
+      }
+
+      .theme-toggle::after {
+        width: 19px;
+        height: 19px;
+      }
+
+      [data-theme="light"] .theme-toggle::after {
+        transform: translateX(25px);
+      }
+
+      .theme-icon {
+        font-size: 0.7rem;
+      }
+
+      .sun-icon {
+        left: 6px;
+      }
+
+      .moon-icon {
+        right: 6px;
       }
     }
 
     @media (max-width: 767.98px) {
       .navbar-collapse {
-        background-color: var(--secondary-color);
+        background-color: var(--card-bg);
         padding: 1rem;
-        border-radius: 5px;
+        border-radius: 10px;
         margin-top: 0.5rem;
+        box-shadow: var(--shadow-1);
       }
 
-      /* Fix for theme toggle button on mobile */
-      .navbar-nav .nav-item:last-child {
-        margin-top: 0.5rem;
-        padding-top: 0.5rem;
-        border-top: 1px solid rgba(100, 255, 218, 0.2);
-      }
-
-      [data-theme="light"] .navbar-nav .nav-item:last-child {
-        border-top: 1px solid rgba(0, 123, 255, 0.2);
-      }
-
-      .theme-toggle {
-        margin: 0;
-        width: 100%;
-        border-radius: 5px;
+      .theme-toggle-container {
+        margin: 0.5rem 0 0;
         justify-content: center;
       }
     }
 
     @media (min-width: 576px) and (max-width: 767.98px) {
       .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
 
       .hero-subtitle {
-        font-size: 1.3rem;
-      }
-
-      .hero-img-container {
-        max-width: 250px;
-      }
-    }
-
-    @media (min-width: 768px) and (max-width: 991.98px) {
-      .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
       }
 
       .hero-img-container {
@@ -813,10 +982,21 @@
       }
     }
 
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .hero-img-container {
+        max-width: 350px;
+      }
+    }
+
     /* Fix for mobile touch issues */
     .btn-primary-custom,
-    .social-link,
-    .theme-toggle {
+    .social-icon,
+    .theme-toggle,
+    .project-btn {
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
@@ -830,7 +1010,7 @@
   </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
@@ -862,11 +1042,13 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
-          <li class="nav-item ms-2">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-              <i class="fas fa-sun"></i>
-              <span class="theme-text">Light Mode</span>
-            </button>
+          <li class="nav-item">
+            <div class="theme-toggle-container">
+              <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-sun theme-icon sun-icon"></i>
+                <i class="fas fa-moon theme-icon moon-icon"></i>
+              </button>
+            </div>
           </li>
         </ul>
       </div>
@@ -881,12 +1063,11 @@
           <div class="hero-content">
             <h1 class="hero-title fade-in">Hi, I'm Kishan Parekh</h1>
             <h2 class="hero-subtitle fade-in"><b>Full Stack Developer</b></h2>
-            <p class="hero-description fade-in"><b>
-                ✨ "I specialize in building creative and modern websites that bring ideas to life. Having completed my
-                Bachelor's in Computer Applications and now pursuing my MCA, I'm passionate about learning,
-                experimenting,
-                and delivering user-friendly digital experiences that leave an impact."
-              </b> </p>
+            <p class="hero-description fade-in">
+              ✨ "I specialize in building creative and modern websites that bring ideas to life. Having completed my
+              Bachelor's in Computer Applications and now pursuing my MCA, I'm passionate about learning, experimenting,
+              and delivering user-friendly digital experiences that leave an impact."
+            </p>
             <div class="d-flex flex-wrap fade-in">
               <a href="#contact" class="btn btn-primary-custom me-2 mb-2"><b>Get In Touch</b></a>
               <a href="resume/r.png" class="btn btn-primary-custom mb-2" download><b>Download Resume</b></a>
@@ -915,46 +1096,38 @@
             <p class="fade-in">
               I'm an <b>MCA student</b> with a strong foundation in <b>computer applications</b> and a keen interest in
               <b>full stack development</b>. Building upon my <b>BCA experience</b>, I am continuously expanding my
-              expertise in
-              modern programming languages, frameworks, and software development practices.
+              expertise in modern programming languages, frameworks, and software development practices.
             </p>
 
             <p class="fade-in">
               During my BCA, I developed a <b>Library Management System</b> in <b>PHP</b>, which gave me practical
-              exposure to
-              working with <b>frontend design</b>, <b>backend logic</b>, and <b>database integration</b>. That project
-              helped me
-              strengthen my <b>problem-solving skills</b> and understand how different layers of an application come
-              together.
+              exposure to working with <b>frontend design</b>, <b>backend logic</b>, and <b>database integration</b>.
+              That project helped me strengthen my <b>problem-solving skills</b> and understand how different layers of
+              an application come together.
             </p>
 
             <p class="fade-in">
               Now, in my MCA journey, I am focusing on:
             <ul>
               <li class="fade-in">Exploring modern frameworks like <b>React.js</b>, <b>Node.js</b>, and
-                <b>Express.js</b> for building
-                scalable applications.
+                <b>Express.js</b> for building scalable applications.
               </li>
               <li class="fade-in"><b>Database management</b> with <b>MySQL</b> and <b>MongoDB</b>.</li>
               <li class="fade-in"><b>Version control & collaboration</b> using <b>Git</b> and <b>GitHub</b>.</li>
               <li class="fade-in">Learning about <b>cloud deployment</b> and <b>APIs</b> to deliver real-world,
-                production-ready
-                solutions.</li>
+                production-ready solutions.</li>
             </ul>
             </p>
 
             <p class="fade-in">
               I am enthusiastic about working on <b>real-world projects</b>, <b>internships</b>, and
-              <b>collaborations</b> that
-              challenge me to build complete, dynamic, and user-friendly applications.
+              <b>collaborations</b> that challenge me to build complete, dynamic, and user-friendly applications.
             </p>
 
             <p class="fade-in">
-              Beyond academics, I enjoy playing <b>cricket</b>, debugging <b>coding errors</b>, and exploring <b>video
-                games</b>,
-              which keep me curious, analytical, and motivated.
+              Beyond academics, I enjoy playing <b>cricket</b>, debugging <b>coding errors</b>, and exploring
+              <b>video games</b>, which keep me curious, analytical, and motivated.
             </p>
-
           </div>
         </div>
       </div>
@@ -1073,13 +1246,11 @@
             <h2 class="education-degree"><b>Sardar Patel University , Vallabh Vidyanagar</b></h2>
             <p class="education-institution"><b>Anand Commerce College, Anand</b></p>
             <p>
-
               <b>CGPA : 8.81/10.0</b>
             <p>
               Activities and societies: Participated in tech seminars, workshops, and group coding projects.
               Completed <b>Bachelor of Computer Applications (BCA)</b> from <b>Anand Commerce College</b>, affiliated
-              with
-              <b>Sardar Patel University</b>. Gained strong foundational and practical knowledge in areas such as
+              with <b>Sardar Patel University</b>. Gained strong foundational and practical knowledge in areas such as
               <b>programming (C, C++, Java)</b>, <b>database management</b>, <b>web development</b>, and
               <b>computer networks</b>. Actively participated in coding assignments, lab sessions, and team-based
               academic projects.
@@ -1087,12 +1258,10 @@
               <b>ASP.NET (C#), HTML, CSS, Bootstrap, JavaScript, and jQuery</b>.
               <br><br>
               This program significantly enhanced my <b>logical thinking</b>, <b>problem-solving abilities</b>, and
-              overall
-              <b>software development skills</b>, preparing me for real-world challenges in the IT industry.
+              overall <b>software development skills</b>, preparing me for real-world challenges in the IT industry.
             </p>
             </p>
           </div>
-
         </div>
 
         <div class="cgpa-badge">
@@ -1255,63 +1424,58 @@
           <div class="contact-form fade-in">
             <form id="contactForm">
               <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label"><b>Name</b></label>
                 <input type="text" class="form-control" id="name" required>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label"><b>Email</b></label>
                 <input type="email" class="form-control" id="email" required>
               </div>
               <div class="mb-3">
-                <label for="subject" class="form-label">Subject</label>
+                <label for="phone" class="form-label"><b>Phone Number</b></label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label"><b>Subject</b></label>
                 <input type="text" class="form-control" id="subject">
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
+                <label for="message" class="form-label"><b>Message</b></label>
                 <textarea class="form-control" id="message" rows="5" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary-custom"><b>Send Message</b></button>
+              <button type="submit" class="btn btn-primary-custom"><b>Send Message via WhatsApp</b></button>
             </form>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="contact-info fade-in">
-            <h3 class="mb-4">Contact Information</h3>
+            <h3 class="mb-4"><b>Contact Information</b></h3>
             <div class="mb-3">
               <i class="fas fa-map-marker-alt contact-icon"></i>
-              <span>Samarkha, Anand, Gujarat, India</span>
+              <span><b>Samarkha, Anand, Gujarat, India</b></span>
             </div>
             <div class="mb-3">
               <i class="fas fa-envelope contact-icon"></i>
-              <a href="mailto:kishanparekh947@gmail.com" class="contact-link">kishanparekh947@gmail.com</a>
+              <a href="mailto:kishanparekh947@gmail.com" class="contact-link"><b>kishanparekh947@gmail.com</b></a>
             </div>
             <div class="mb-3">
               <i class="fas fa-phone-alt contact-icon"></i>
-              <a href="tel:+919316361979" class="contact-link">+91 9316361979</a>
+              <a href="tel:+919316361979" class="contact-link"><b>+91 9316361979</b></a>
             </div>
-            <div>
-              <a href="https://www.linkedin.com/in/kishan-parekh-b97190364" target="_blank"
-                style="text-decoration:none; display:inline-block; margin:5px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="35" height="35"
-                  style="transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'"
-                  onmouseout="this.style.transform='scale(1)'">
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/kishan-parekh-b97190364" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
               </a>
-
-              <a href="https://github.com/Kishanparekh0369" target="_blank"
-                style="text-decoration:none; display:inline-block; margin:5px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" width="35" height="35"
-                  style="transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'"
-                  onmouseout="this.style.transform='scale(1)'">
+              <a href="https://github.com/Kishanparekh0369" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
               </a>
-
-              <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm"
-                target="_blank" style="text-decoration:none; display:inline-block; margin:5px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="35" height="35"
-                  style="transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'"
-                  onmouseout="this.style.transform='scale(1)'">
+              <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
               </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -1325,25 +1489,6 @@
     </div>
   </footer>
 
-  <!-- Success Modal -->
-  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="successModalLabel">Message Sent!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center py-4">
-          <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
-          <p>Thank you for your message. I'll get back to you as soon as possible!</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // Set default theme to dark mode
@@ -1352,8 +1497,6 @@
 
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('i');
-    const themeText = themeToggle.querySelector('.theme-text');
 
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
@@ -1361,25 +1504,17 @@
     // Set initial theme based on saved preference
     if (savedTheme === 'light') {
       document.body.setAttribute('data-theme', 'light');
-      themeIcon.classList.replace('fa-moon', 'fa-sun');
-      themeText.textContent = 'Dark Mode';
     } else {
       document.body.removeAttribute('data-theme');
-      themeIcon.classList.replace('fa-sun', 'fa-moon');
-      themeText.textContent = 'Light Mode';
     }
 
     // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
       if (document.body.getAttribute('data-theme') === 'light') {
         document.body.removeAttribute('data-theme');
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-        themeText.textContent = 'Light Mode';
         localStorage.setItem('theme', 'dark');
       } else {
         document.body.setAttribute('data-theme', 'light');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-        themeText.textContent = 'Dark Mode';
         localStorage.setItem('theme', 'light');
       }
 
@@ -1490,16 +1625,30 @@
       }
     });
 
-    // Form submission handling
+    // WhatsApp integration - Form submission
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Here you would normally send the form data to a server
-      // For demonstration, we'll just show the success modal
-
-      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-      successModal.show();
-
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      if (!name || !email || !phone || !message) {
+        alert('Please fill in all required fields before sending a message.');
+        return;
+      }
+      
+      // Format the message with bold text for important details
+      const whatsappMessage = `Hello Kishan!%0A%0A*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Subject:* ${subject}%0A*Message:* ${message}%0A%0A*Sent from your portfolio website*`;
+      
+      // Your WhatsApp number
+      const whatsappURL = `https://wa.me/919316361979?text=${whatsappMessage}`;
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappURL, '_blank');
+      
       // Reset the form
       this.reset();
     });

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Kishan Parekh - Full Stack Developer</title>
+  <title>Parekh Kishan Ranchhodbhai - Full Stack Developer</title>
   <link rel="icon" type="image/png" href="images/kishan new re.jpg">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,45 +12,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     :root {
-      --primary-color: #0f172a;
-      --secondary-color: #1e293b;
-      --accent-color: #3b82f6;
-      --accent-hover: #2563eb;
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --card-bg: #1e293b;
-      --gradient-1: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      --gradient-2: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-      --gradient-3: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.3);
-      --shadow-2: 0 15px 35px rgba(0, 0, 0, 0.4);
-      --shadow-3: 0 5px 15px rgba(59, 130, 246, 0.3);
-      --border-radius: 12px;
+      --primary-color: #0a192f;
+      --secondary-color: #172a45;
+      --accent-color: #64ffda;
+      --text-primary: #e6f1ff;
+      --text-secondary: #8892b0;
+      --card-bg: #112240;
     }
 
     [data-theme="light"] {
-      --primary-color: #f8fafc;
-      --secondary-color: #e2e8f0;
-      --accent-color: #3b82f6;
-      --accent-hover: #2563eb;
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
+      --primary-color: #f0f7ff;
+      --secondary-color: #e1e9f5;
+      --accent-color: #007bff;
+      --text-primary: #1a365d;
+      --text-secondary: #4a5568;
       --card-bg: #ffffff;
-      --gradient-1: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      --gradient-2: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-      --gradient-3: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.1);
-      --shadow-2: 0 15px 35px rgba(0, 0, 0, 0.15);
-      --shadow-3: 0 5px 15px rgba(59, 130, 246, 0.2);
     }
 
     * {
       -webkit-tap-highlight-color: transparent;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
       background-color: var(--primary-color);
       color: var(--text-primary);
       line-height: 1.6;
@@ -59,52 +43,32 @@
       -webkit-text-size-adjust: 100%;
     }
 
-    /* Modern navbar with glass effect */
+    [data-theme="light"] body {
+      color: var(--text-primary);
+    }
+
     .navbar {
-      background-color: rgba(15, 23, 42, 0) !important;
-      backdrop-filter: blur(0px);
-      box-shadow: none;
-      padding: 1.5rem 0;
-      transition: all 0.4s ease;
-    }
-
-    .navbar.scrolled {
-      background-color: rgba(15, 23, 42, 0.95) !important;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      background-color: var(--secondary-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       padding: 0.75rem 0;
-    }
-
-    [data-theme="light"] .navbar {
-      background-color: rgba(248, 250, 252, 0) !important;
-    }
-
-    [data-theme="light"] .navbar.scrolled {
-      background-color: rgba(248, 250, 252, 0.95) !important;
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-      background: var(--gradient-2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
       transition: all 0.3s ease;
     }
 
-    .navbar.scrolled .navbar-brand {
-      font-size: 1.3rem;
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: var(--text-primary) !important;
+      font-size: 1rem;
     }
 
     .nav-link {
-      color: var(--text-primary) !important;
+      margin: 0 0.3rem;
       font-weight: 500;
       position: relative;
-      margin: 0 0.5rem;
-      transition: color 0.3s ease;
-      padding: 0.5rem 0.8rem !important;
-      border-radius: 8px;
     }
 
     .nav-link::after {
@@ -114,7 +78,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background: var(--gradient-2);
+      background-color: var(--accent-color);
       transition: width 0.3s ease;
     }
 
@@ -122,100 +86,62 @@
       width: 100%;
     }
 
-    .nav-link:hover {
-      color: var(--accent-color) !important;
-    }
-
     .navbar-toggler {
-      border: none;
+      border-color: var(--accent-color);
       padding: 0.25rem 0.5rem;
-      background: transparent;
-    }
-
-    .navbar-toggler:focus {
-      box-shadow: none;
+      font-size: 1rem;
     }
 
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28100, 255, 218, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       width: 1.2em;
       height: 1.2em;
     }
 
     [data-theme="light"] .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2815, 23, 42, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 123, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-    /* Theme toggle - Modern design */
-    .theme-toggle-container {
-      display: flex;
-      align-items: center;
-      margin-left: 1rem;
-    }
-
-    .theme-toggle {
-      position: relative;
-      width: 60px;
-      height: 30px;
-      border-radius: 50px;
-      background: var(--gradient-2);
-      border: none;
-      cursor: pointer;
+    section {
+      padding: 3.5rem 0;
+      scroll-margin-top: 60px;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-3);
+      border-radius: 8px;
     }
 
-    .theme-toggle::after {
+    /* Section hover effects */
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-title {
+      color: var(--accent-color);
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      font-size: 1.8rem;
+    }
+
+    .section-title::after {
       content: '';
       position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: white;
-      transition: transform 0.3s ease;
+      width: 100%;
+      height: 2px;
+      bottom: -8px;
+      left: 0;
+      background-color: var(--accent-color);
     }
 
-    [data-theme="light"] .theme-toggle::after {
-      transform: translateX(30px);
-    }
-
-    .theme-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.9rem;
-      color: white;
-    }
-
-    .sun-icon {
-      left: 8px;
-    }
-
-    .moon-icon {
-      right: 8px;
-    }
-
-    /* Hero section with modern design */
+    /* Hero Section */
     #hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: var(--gradient-1);
+      background-color: var(--secondary-color);
       position: relative;
       overflow: hidden;
-      padding-top: 0;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+      padding-top: 70px;
     }
 
     .hero-content {
@@ -224,611 +150,559 @@
     }
 
     .hero-title {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      background: var(--gradient-2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
     }
 
     .hero-subtitle {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
       color: var(--accent-color);
+      margin-bottom: 1.2rem;
     }
 
     .hero-description {
-      font-size: 1.1rem;
+      font-size: 1rem;
       max-width: 100%;
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
       color: var(--text-primary);
-      line-height: 1.8;
     }
 
     .hero-img-container {
       position: relative;
-      max-width: 400px;
+      max-width: 380px;
       margin: 0 auto;
     }
 
     .hero-img {
       width: 100%;
       height: auto;
-      border-radius: 20px;
-      box-shadow: var(--shadow-2);
-      transition: transform 0.5s ease;
-      border: 3px solid transparent;
-      background: var(--gradient-2);
-      padding: 5px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
 
     .hero-img:hover {
-      transform: translateY(-10px) scale(1.02);
+      transform: translateY(-5px);
     }
 
-    /* Modern buttons */
     .btn-primary-custom {
-      background: transparent;
+      background-color: transparent;
       color: var(--accent-color);
-      border: 2px solid var(--accent-color);
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 50px;
+      border: 1px solid var(--accent-color);
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+      border-radius: 5px;
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
-      margin: 0.5rem;
-      font-weight: 600;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .btn-primary-custom::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background: var(--gradient-2);
-      transition: all 0.3s ease;
-      z-index: -1;
-    }
-
-    .btn-primary-custom:hover::before {
-      width: 100%;
+      margin: 0.3rem;
     }
 
     .btn-primary-custom:hover {
-      color: white;
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-3);
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
     }
 
-    /* Section styling */
-    section {
-      padding: 5rem 0;
-      scroll-margin-top: 80px;
-      transition: all 0.3s ease;
+    [data-theme="light"] .btn-primary-custom:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     }
 
-    .section-title {
-      color: var(--accent-color);
-      margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
-      font-size: 2.2rem;
-      font-weight: 700;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      width: 60%;
-      height: 4px;
-      bottom: -10px;
-      left: 0;
-      background: var(--gradient-2);
-      border-radius: 2px;
-    }
-
-    /* About section */
+    /* About Section */
     #about {
-      background: var(--gradient-1);
+      background-color: var(--primary-color);
+    }
+
+    .about-img-container {
+      position: relative;
+      max-width: 350px;
+      margin: 0 auto 1.5rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      height: 400px; /* Fixed height for consistent sizing */
     }
 
     .about-img {
-      max-width: 380px;
-      border-radius: 20px;
-      box-shadow: var(--shadow-2);
-      transition: transform 0.5s ease;
-      margin: 0 auto 2rem;
-      border: 3px solid transparent;
-      background: var(--gradient-2);
-      padding: 5px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.8s ease-in-out;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
-    .about-img:hover {
-      transform: scale(1.05);
+    .about-img.active {
+      opacity: 1;
+      position: relative;
     }
 
-    .about-text {
-      color: var(--text-primary);
-    }
-
-    .about-text p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    /* Skills section */
+    /* Skills Section */
     #skills {
-      background: var(--gradient-1);
+      background-color: var(--secondary-color);
     }
 
     .skill-item {
       background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-1);
+      padding: 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-left: 4px solid var(--accent-color);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-2);
-      opacity: 0.05;
-      z-index: 0;
+      border-left: 3px solid var(--accent-color);
     }
 
     .skill-item:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-2);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .skill-name {
-      font-weight: 700;
-      margin-bottom: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
       color: var(--accent-color);
-      font-size: 1.3rem;
-      position: relative;
-      z-index: 1;
+      font-size: 1.1rem;
     }
 
     .progress {
-      height: 10px;
+      height: 8px;
       background-color: var(--secondary-color);
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
+      border-radius: 5px;
+      margin-bottom: 0.8rem;
     }
 
     .progress-bar {
-      background: var(--gradient-2);
-      border-radius: 10px;
-      transition: width 1.5s ease-in-out;
+      background-color: var(--accent-color);
     }
 
-    /* Education section */
+    /* Education Section */
     #education {
-      background: var(--gradient-1);
+      background-color: var(--secondary-color);
     }
 
     .education-card {
       background-color: var(--card-bg);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
-      border-left: 4px solid var(--accent-color);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .education-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-2);
-      opacity: 0.05;
-      z-index: 0;
+      border-left: 3px solid var(--accent-color);
     }
 
     .education-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-2);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
     .education-degree {
       color: var(--accent-color);
-      font-weight: 700;
-      font-size: 1.4rem;
-      position: relative;
-      z-index: 1;
+      font-weight: 600;
+      font-size: 1.2rem;
     }
 
     .education-institution {
       color: var(--text-primary);
-      font-weight: 600;
-      position: relative;
-      z-index: 1;
+      font-weight: 500;
     }
 
     .education-duration {
       color: var(--text-secondary);
-      font-size: 1rem;
-      position: relative;
-      z-index: 1;
+      font-size: 0.9rem;
     }
 
     .semester-card {
-      background-color: rgba(59, 130, 246, 0.1);
-      border-radius: 10px;
-      padding: 1rem;
+      background-color: rgba(100, 255, 218, 0.05);
+      border-radius: 8px;
+      padding: 0.6rem;
       text-align: center;
       transition: all 0.3s ease;
-      border: 2px solid rgba(59, 130, 246, 0.2);
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      margin-bottom: 0.8rem;
     }
 
     [data-theme="light"] .semester-card {
-      background-color: rgba(59, 130, 246, 0.1);
-      border: 2px solid rgba(59, 130, 246, 0.2);
+      background-color: rgba(0, 123, 255, 0.05);
+      border: 1px solid rgba(0, 123, 255, 0.1);
     }
 
     .semester-card:hover {
-      background-color: rgba(59, 130, 246, 0.2);
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-3);
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+    }
+
+    [data-theme="light"] .semester-card:hover {
+      background-color: rgba(0, 123, 255, 0.1);
     }
 
     .semester-title {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--text-secondary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.2rem;
     }
 
     .semester-grade {
-      font-weight: 700;
+      font-weight: 600;
       color: var(--accent-color);
-      font-size: 1.1rem;
+      font-size: 0.9rem;
     }
 
     .cgpa-badge {
-      background: var(--gradient-2);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 50px;
-      font-weight: 700;
+      background-color: rgba(100, 255, 218, 0.1);
+      color: var(--accent-color);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 600;
       display: inline-block;
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-      box-shadow: var(--shadow-3);
-      position: relative;
-      z-index: 1;
+      margin-top: 1rem;
+      font-size: 0.9rem;
     }
 
-    /* Projects section */
+    [data-theme="light"] .cgpa-badge {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    /* Projects Section */
     #projects {
-      background: var(--gradient-1);
+      background-color: var(--primary-color);
     }
 
     .project-card {
       background-color: var(--card-bg);
-      border-radius: var(--border-radius);
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: var(--shadow-1);
-      transition: all 0.3s ease;
-      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      /*transition: all 0.3s ease;*/
+      margin-bottom: 1.5rem;
       height: 100%;
-      border-top: 4px solid var(--accent-color);
-      position: relative;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-2);
-      opacity: 0.05;
-      z-index: 0;
+      border-top: 3px solid var(--accent-color);
     }
 
     .project-card:hover {
-      transform: translateY(-15px);
-      box-shadow: var(--shadow-2);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
     .project-img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
     .project-card:hover .project-img {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .project-title {
       color: var(--accent-color);
-      margin-bottom: 0.8rem;
-      font-weight: 700;
-      font-size: 1.3rem;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
 
     .project-tech {
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 0.8rem;
     }
 
     .tech-badge {
       display: inline-block;
-      background: var(--gradient-2);
-      color: white;
-      padding: 0.3rem 0.8rem;
+      background-color: rgba(100, 255, 218, 0.1);
+      color: var(--accent-color);
+      padding: 0.2rem 0.6rem;
       border-radius: 20px;
-      font-size: 0.8rem;
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-size: 0.7rem;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
     }
 
-    .project-card p {
-      position: relative;
-      z-index: 1;
+    [data-theme="light"] .tech-badge {
+      background-color: rgba(0, 123, 255, 0.1);
     }
 
     /* Project buttons */
     .project-buttons {
       display: flex;
       gap: 10px;
-      margin-top: 1.5rem;
-      position: relative;
-      z-index: 1;
+      margin-top: 15px;
     }
 
     .project-btn {
       flex: 1;
       text-align: center;
-      padding: 10px 15px;
-      border-radius: 50px;
+      padding: 8px 12px;
+      border-radius: 5px;
       font-size: 0.9rem;
       transition: all 0.3s ease;
       text-decoration: none;
-      font-weight: 600;
     }
 
     .github-btn {
-      background: #24292e;
+      background-color: rgba(36, 41, 46, 0.9);
       color: white;
-      border: 2px solid #24292e;
+      border: 1px solid rgba(36, 41, 46, 0.5);
     }
 
     .github-btn:hover {
-      background: transparent;
-      color: #24292e;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(36, 41, 46, 0.3);
+      background-color: rgba(36, 41, 46, 1);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .demo-btn {
-      background: transparent;
+      background-color: transparent;
       color: var(--accent-color);
-      border: 2px solid var(--accent-color);
+      border: 1px solid var(--accent-color);
     }
 
     .demo-btn:hover {
-      background: var(--gradient-2);
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-3);
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
     }
 
-    /* Certifications section */
+    [data-theme="light"] .demo-btn:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    /* Certifications Section */
     #certifications {
-      background: var(--gradient-1);
+      background-color: var(--primary-color);
     }
 
     .certification-card {
       background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-1);
+      padding: 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
-      border-left: 4px solid var(--accent-color);
+      border-left: 3px solid var(--accent-color);
       position: relative;
-      overflow: hidden;
-    }
-
-    .certification-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-2);
-      opacity: 0.05;
-      z-index: 0;
+      min-height: 180px;
     }
 
     .certification-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-2);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .certification-name {
       color: var(--accent-color);
-      font-weight: 700;
-      font-size: 1.2rem;
-      position: relative;
-      z-index: 1;
+      font-weight: 600;
+      font-size: 1rem;
     }
 
     .certification-issuer {
       color: var(--text-primary);
-      font-size: 1rem;
-      position: relative;
-      z-index: 1;
+      font-size: 0.9rem;
     }
 
     .certification-date {
       color: var(--text-secondary);
-      font-size: 0.9rem;
-      position: relative;
-      z-index: 1;
+      font-size: 0.8rem;
     }
 
-    .certification-card p {
-      position: relative;
-      z-index: 1;
+    .certification-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
 
-    /* Contact section */
+    .certification-btn:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+    }
+
+    [data-theme="light"] .certification-btn:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    /* Contact Section */
     #contact {
-      background: var(--gradient-1);
+      background-color: var(--secondary-color);
     }
 
     .contact-form {
       background-color: var(--card-bg);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-form::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-2);
-      opacity: 0.05;
-      z-index: 0;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     .form-control {
       background-color: var(--secondary-color);
-      border: 2px solid var(--text-secondary);
+      border: 1px solid var(--text-secondary);
       color: var(--text-primary);
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      padding: 0.8rem 1rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+      padding: 0.7rem;
     }
 
     .form-control:focus {
       background-color: var(--secondary-color);
       color: var(--text-primary);
       border-color: var(--accent-color);
-      box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.25);
+    }
+
+    [data-theme="light"] .form-control:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
 
     .contact-info {
       margin-top: 2rem;
-      position: relative;
-      z-index: 1;
     }
 
     .contact-icon {
       color: var(--accent-color);
-      margin-right: 0.8rem;
-      font-size: 1.2rem;
+      margin-right: 0.5rem;
     }
 
     .contact-link {
       color: var(--text-primary);
       text-decoration: none;
       transition: color 0.3s ease;
-      font-size: 1.05rem;
-      font-weight: 500;
+      font-size: 0.95rem;
     }
 
     .contact-link:hover {
       color: var(--accent-color);
     }
 
-    /* Social media icons */
-    .social-icons {
-      display: flex;
-      gap: 15px;
-      margin-top: 1.5rem;
-    }
-
-    .social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--gradient-2);
-      color: white;
-      font-size: 1.3rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      box-shadow: var(--shadow-3);
-    }
-
-    .social-icon:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: var(--shadow-2);
-    }
-
     /* Footer */
     footer {
-      background: var(--gradient-1);
-      padding: 2rem 0;
+      background-color: var(--primary-color);
+      padding: 1.5rem 0;
       text-align: center;
-      border-top: 1px solid var(--secondary-color);
     }
 
     .footer-text {
       color: var(--text-secondary);
       margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      margin: 0 0.4rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    [data-theme="light"] .social-link:hover {
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
+
+    /* Colorful social icons */
+    .social-link.linkedin {
+      color: #0A66C2;
+      background-color: rgba(10, 102, 194, 0.1);
+    }
+
+    .social-link.github {
+      color: #333;
+      background-color: rgba(51, 51, 51, 0.1);
+    }
+
+    .social-link.instagram {
+      color: #E4405F;
+      background-color: rgba(228, 64, 95, 0.1);
+    }
+
+    .social-link.twitter {
+      color: #1DA1F2;
+      background-color: rgba(29, 161, 242, 0.1);
+    }
+
+    /* Improved Theme Toggle */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 50px;
+      background: var(--accent-color);
+      color: var(--primary-color);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      margin-left: 10px;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="light"] .theme-toggle {
+      background: var(--accent-color);
+      color: var(--primary-color);
+    }
+
+    .theme-toggle-icon {
       font-size: 1rem;
     }
 
-    /* Animation classes */
+    /* Modal Styles */
+    .modal-content {
+      background-color: var(--card-bg);
+      color: var(--text-primary);
+      border: none;
+      border-radius: 10px;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid var(--secondary-color);
+    }
+
+    .modal-footer {
+      border-top: 1px solid var(--secondary-color);
+    }
+
+    .btn-close {
+      filter: invert(1);
+    }
+
+    [data-theme="light"] .btn-close {
+      filter: invert(0);
+    }
+
+    /* Animation classes - Faster animations for certifications and projects */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .fade-in.visible {
@@ -839,7 +713,7 @@
     .stagger-item {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .stagger-item.visible {
@@ -847,45 +721,73 @@
       transform: translateY(0);
     }
 
-    /* WhatsApp button */
+    /* Faster animations for certifications and projects */
+    #certifications .stagger-item,
+    #projects .stagger-item {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* WhatsApp Integration Styles */
     .whatsapp-btn {
-      background: #25D366;
+      background-color: #25D366;
       color: white;
       border: none;
-      padding: 12px 25px;
-      border-radius: 50px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+      border-radius: 5px;
       transition: all 0.3s ease;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.3rem;
+      width: 100%;
     }
 
     .whatsapp-btn:hover {
-      background: #128C7E;
+      background-color: #128C7E;
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
       color: white;
+    }
+
+    .whatsapp-btn i {
+      margin-right: 8px;
+    }
+
+    /* Certificate Modal Styles */
+    .certificate-modal .modal-body {
+      padding: 0;
+      text-align: center;
+    }
+
+    .certificate-modal .certificate-image {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .certificate-modal .modal-footer {
+      display: flex;
+      justify-content: space-between;
     }
 
     /* Mobile-specific adjustments */
     @media (max-width: 575.98px) {
       section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
       }
 
       .hero-title {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
       }
 
       .hero-subtitle {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
 
       .section-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .btn-primary-custom {
@@ -895,108 +797,136 @@
       }
 
       .hero-img-container {
-        max-width: 250px;
+        max-width: 220px;
       }
 
-      .about-img {
-        max-width: 250px;
+      .about-img-container {
+        max-width: 200px;
+        height: 250px;
       }
 
       .education-card {
-        padding: 1.5rem;
+        padding: 1.2rem;
       }
 
       .semester-card {
-        padding: 0.8rem;
+        padding: 0.5rem;
       }
 
       .contact-form {
-        padding: 1.5rem;
+        padding: 1.2rem;
       }
 
       .navbar-brand {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+      }
+
+      .nav-link {
+        font-size: 0.9rem;
+        margin: 0 0.2rem;
+      }
+
+      .theme-toggle {
+        padding: 6px 12px;
+        font-size: 0.8rem;
       }
 
       .project-buttons {
         flex-direction: column;
       }
 
-      .theme-toggle-container {
-        margin-left: 0.5rem;
+      /* Fix for mobile navbar - theme toggle stays visible */
+      .navbar-nav .nav-item:last-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
       }
 
       .theme-toggle {
-        width: 50px;
-        height: 25px;
+        margin-top: 0.5rem;
+        width: auto;
+        border-radius: 50px;
       }
-
-      .theme-toggle::after {
-        width: 19px;
-        height: 19px;
+      
+      .certification-card {
+        min-height: 200px;
       }
-
-      [data-theme="light"] .theme-toggle::after {
-        transform: translateX(25px);
-      }
-
-      .theme-icon {
-        font-size: 0.7rem;
-      }
-
-      .sun-icon {
-        left: 6px;
-      }
-
-      .moon-icon {
-        right: 6px;
+      
+      .certification-btn {
+        position: static;
+        margin-top: 10px;
+        display: block;
+        text-align: center;
       }
     }
 
     @media (max-width: 767.98px) {
       .navbar-collapse {
-        background-color: var(--card-bg);
+        background-color: var(--secondary-color);
         padding: 1rem;
-        border-radius: 10px;
+        border-radius: 5px;
         margin-top: 0.5rem;
-        box-shadow: var(--shadow-1);
       }
 
-      .theme-toggle-container {
-        margin: 0.5rem 0 0;
+      /* Fix for theme toggle button on mobile */
+      .navbar-nav .nav-item:last-child {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(100, 255, 218, 0.2);
+      }
+
+      [data-theme="light"] .navbar-nav .nav-item:last-child {
+        border-top: 1px solid rgba(0, 123, 255, 0.2);
+      }
+
+      .theme-toggle {
+        margin: 0;
+        width: 100%;
+        border-radius: 5px;
         justify-content: center;
+      }
+      
+      .about-img-container {
+        height: 300px;
       }
     }
 
     @media (min-width: 576px) and (max-width: 767.98px) {
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
 
       .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
 
       .hero-img-container {
-        max-width: 300px;
+        max-width: 250px;
+      }
+      
+      .about-img-container {
+        height: 320px;
       }
     }
 
     @media (min-width: 768px) and (max-width: 991.98px) {
       .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
       }
 
       .hero-img-container {
-        max-width: 350px;
+        max-width: 300px;
+      }
+      
+      .about-img-container {
+        height: 350px;
       }
     }
 
     /* Fix for mobile touch issues */
     .btn-primary-custom,
-    .social-icon,
-    .theme-toggle,
-    .project-btn {
+    .social-link,
+    .theme-toggle {
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
@@ -1010,7 +940,7 @@
   </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
@@ -1042,13 +972,11 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
-          <li class="nav-item">
-            <div class="theme-toggle-container">
-              <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                <i class="fas fa-sun theme-icon sun-icon"></i>
-                <i class="fas fa-moon theme-icon moon-icon"></i>
-              </button>
-            </div>
+          <li class="nav-item ms-2">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+              <i class="fas fa-moon theme-toggle-icon"></i>
+              <span class="theme-text">Light Mode</span>
+            </button>
           </li>
         </ul>
       </div>
@@ -1063,11 +991,12 @@
           <div class="hero-content">
             <h1 class="hero-title fade-in">Hi, I'm Kishan Parekh</h1>
             <h2 class="hero-subtitle fade-in"><b>Full Stack Developer</b></h2>
-            <p class="hero-description fade-in">
-              ✨ "I specialize in building creative and modern websites that bring ideas to life. Having completed my
-              Bachelor's in Computer Applications and now pursuing my MCA, I'm passionate about learning, experimenting,
-              and delivering user-friendly digital experiences that leave an impact."
-            </p>
+            <p class="hero-description fade-in"><b>
+                ✨ "I specialize in building creative and modern websites that bring ideas to life. Having completed my
+                Bachelor's in Computer Applications and now pursuing my MCA, I'm passionate about learning,
+                experimenting,
+                and delivering user-friendly digital experiences that leave an impact."
+              </b> </p>
             <div class="d-flex flex-wrap fade-in">
               <a href="#contact" class="btn btn-primary-custom me-2 mb-2"><b>Get In Touch</b></a>
               <a href="resume/r.png" class="btn btn-primary-custom mb-2" download><b>Download Resume</b></a>
@@ -1089,45 +1018,55 @@
       <h2 class="section-title fade-in">About Me</h2>
       <div class="row align-items-center">
         <div class="col-lg-4 mb-4 mb-lg-0 text-center">
-          <img src="images/kpbhai.jpg" alt="Kishan Parekh" class="about-img img-fluid fade-in" />
+          <div class="about-img-container">
+            <img src="images/profile.jpg" alt="Kishan Parekh" class="about-img img-fluid fade-in active" />
+          </div>
         </div>
         <div class="col-lg-8">
           <div class="about-text">
             <p class="fade-in">
               I'm an <b>MCA student</b> with a strong foundation in <b>computer applications</b> and a keen interest in
               <b>full stack development</b>. Building upon my <b>BCA experience</b>, I am continuously expanding my
-              expertise in modern programming languages, frameworks, and software development practices.
+              expertise in
+              modern programming languages, frameworks, and software development practices.
             </p>
 
             <p class="fade-in">
               During my BCA, I developed a <b>Library Management System</b> in <b>PHP</b>, which gave me practical
-              exposure to working with <b>frontend design</b>, <b>backend logic</b>, and <b>database integration</b>.
-              That project helped me strengthen my <b>problem-solving skills</b> and understand how different layers of
-              an application come together.
+              exposure to
+              working with <b>frontend design</b>, <b>backend logic</b>, and <b>database integration</b>. That project
+              helped me
+              strengthen my <b>problem-solving skills</b> and understand how different layers of an application come
+              together.
             </p>
 
             <p class="fade-in">
               Now, in my MCA journey, I am focusing on:
             <ul>
               <li class="fade-in">Exploring modern frameworks like <b>React.js</b>, <b>Node.js</b>, and
-                <b>Express.js</b> for building scalable applications.
+                <b>Express.js</b> for building
+                scalable applications.
               </li>
               <li class="fade-in"><b>Database management</b> with <b>MySQL</b> and <b>MongoDB</b>.</li>
               <li class="fade-in"><b>Version control & collaboration</b> using <b>Git</b> and <b>GitHub</b>.</li>
               <li class="fade-in">Learning about <b>cloud deployment</b> and <b>APIs</b> to deliver real-world,
-                production-ready solutions.</li>
+                production-ready
+                solutions.</li>
             </ul>
             </p>
 
             <p class="fade-in">
               I am enthusiastic about working on <b>real-world projects</b>, <b>internships</b>, and
-              <b>collaborations</b> that challenge me to build complete, dynamic, and user-friendly applications.
+              <b>collaborations</b> that
+              challenge me to build complete, dynamic, and user-friendly applications.
             </p>
 
             <p class="fade-in">
-              Beyond academics, I enjoy playing <b>cricket</b>, debugging <b>coding errors</b>, and exploring
-              <b>video games</b>, which keep me curious, analytical, and motivated.
+              Beyond academics, I enjoy playing <b>cricket</b>, debugging <b>coding errors</b>, and exploring <b>video
+                games</b>,
+              which keep me curious, analytical, and motivated.
             </p>
+
           </div>
         </div>
       </div>
@@ -1246,11 +1185,13 @@
             <h2 class="education-degree"><b>Sardar Patel University , Vallabh Vidyanagar</b></h2>
             <p class="education-institution"><b>Anand Commerce College, Anand</b></p>
             <p>
+
               <b>CGPA : 8.81/10.0</b>
             <p>
               Activities and societies: Participated in tech seminars, workshops, and group coding projects.
               Completed <b>Bachelor of Computer Applications (BCA)</b> from <b>Anand Commerce College</b>, affiliated
-              with <b>Sardar Patel University</b>. Gained strong foundational and practical knowledge in areas such as
+              with
+              <b>Sardar Patel University</b>. Gained strong foundational and practical knowledge in areas such as
               <b>programming (C, C++, Java)</b>, <b>database management</b>, <b>web development</b>, and
               <b>computer networks</b>. Actively participated in coding assignments, lab sessions, and team-based
               academic projects.
@@ -1258,10 +1199,12 @@
               <b>ASP.NET (C#), HTML, CSS, Bootstrap, JavaScript, and jQuery</b>.
               <br><br>
               This program significantly enhanced my <b>logical thinking</b>, <b>problem-solving abilities</b>, and
-              overall <b>software development skills</b>, preparing me for real-world challenges in the IT industry.
+              overall
+              <b>software development skills</b>, preparing me for real-world challenges in the IT industry.
             </p>
             </p>
           </div>
+
         </div>
 
         <div class="cgpa-badge">
@@ -1382,6 +1325,7 @@
             <p class="certification-issuer mb-1">GeeksforGeeks</p>
             <p class="certification-date mb-2">2025</p>
             <p>Completed comprehensive Java programming course covering core concepts and advanced topics.</p>
+            <a href="#" class="certification-btn" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate="images/c4.jpg">View Certificate</a>
           </div>
         </div>
 
@@ -1391,6 +1335,7 @@
             <p class="certification-issuer mb-1">Coursera</p>
             <p class="certification-date mb-2">2025</p>
             <p>Built and deployed a complete WordPress website as part of the certification program.</p>
+            <a href="#" class="certification-btn" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate="images/c5.jpg">View Certificate</a>
           </div>
         </div>
 
@@ -1400,6 +1345,7 @@
             <p class="certification-issuer mb-1">Sardar Patel College</p>
             <p class="certification-date mb-2">2022</p>
             <p>Participated and successfully completed the accounting talent hunt program.</p>
+            <a href="#" class="certification-btn" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate="images/c2.jpg">View Certificate</a>
           </div>
         </div>
 
@@ -1409,6 +1355,7 @@
             <p class="certification-issuer mb-1">Gujarat Red Cross</p>
             <p class="certification-date mb-2">2023-2024</p>
             <p>Active member of the Youth Red Cross organization, participating in various social activities.</p>
+            <a href="#" class="certification-btn" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate="images/c3.jpg">View Certificate</a>
           </div>
         </div>
       </div>
@@ -1424,58 +1371,71 @@
           <div class="contact-form fade-in">
             <form id="contactForm">
               <div class="mb-3">
-                <label for="name" class="form-label"><b>Name</b></label>
+                <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" required>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label"><b>Email</b></label>
+                <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" required>
               </div>
               <div class="mb-3">
-                <label for="phone" class="form-label"><b>Phone Number</b></label>
-                <input type="tel" class="form-control" id="phone" required>
-              </div>
-              <div class="mb-3">
-                <label for="subject" class="form-label"><b>Subject</b></label>
+                <label for="subject" class="form-label">Subject</label>
                 <input type="text" class="form-control" id="subject">
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label"><b>Message</b></label>
+                <label for="message" class="form-label">Message</label>
                 <textarea class="form-control" id="message" rows="5" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary-custom"><b>Send Message via WhatsApp</b></button>
+              <button type="button" class="btn whatsapp-btn" id="whatsappBtn">
+                <i class="fab fa-whatsapp"></i> Send via WhatsApp
+              </button>
             </form>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="contact-info fade-in">
-            <h3 class="mb-4"><b>Contact Information</b></h3>
+            <h3 class="mb-4">Contact Information</h3>
             <div class="mb-3">
               <i class="fas fa-map-marker-alt contact-icon"></i>
-              <span><b>Samarkha, Anand, Gujarat, India</b></span>
+              <span>Samarkha, Anand, Gujarat, India</span>
             </div>
             <div class="mb-3">
               <i class="fas fa-envelope contact-icon"></i>
-              <a href="mailto:kishanparekh947@gmail.com" class="contact-link"><b>kishanparekh947@gmail.com</b></a>
+              <a href="mailto:kishanparekh947@gmail.com" class="contact-link">kishanparekh947@gmail.com</a>
             </div>
             <div class="mb-3">
               <i class="fas fa-phone-alt contact-icon"></i>
-              <a href="tel:+919316361979" class="contact-link"><b>+91 9316361979</b></a>
+              <a href="tel:+919316361979" class="contact-link">+91 9316361979</a>
             </div>
-            <div class="social-icons">
-              <a href="https://www.linkedin.com/in/kishan-parekh-b97190364" target="_blank" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/Kishanparekh0369" target="_blank" class="social-icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm" target="_blank" class="social-icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
+           <div>
+  <a href="https://www.linkedin.com/in/kishan-parekh-b97190364" target="_blank" 
+     style="text-decoration:none; display:inline-block; margin:5px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+         alt="LinkedIn" width="35" height="35" 
+         style="transition:transform 0.3s ease;" 
+         onmouseover="this.style.transform='scale(1.2)'" 
+         onmouseout="this.style.transform='scale(1)'">
+  </a>
+
+  <a href="https://github.com/Kishanparekh0369" target="_blank" 
+     style="text-decoration:none; display:inline-block; margin:5px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" 
+         alt="GitHub" width="35" height="35" 
+         style="transition:transform 0.3s ease;" 
+         onmouseover="this.style.transform='scale(1.2)'" 
+         onmouseout="this.style.transform='scale(1)'">
+  </a>
+
+  <a href="https://www.instagram.com/invites/contact/?igsh=1lzeqlxd2sja7&utm_content=emeoglm" target="_blank" 
+     style="text-decoration:none; display:inline-block; margin:5px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" 
+         alt="Instagram" width="35" height="35" 
+         style="transition:transform 0.3s ease;" 
+         onmouseover="this.style.transform='scale(1.2)'" 
+         onmouseout="this.style.transform='scale(1)'">
+  </a>
+</div>
+
           </div>
         </div>
       </div>
@@ -1489,6 +1449,44 @@
     </div>
   </footer>
 
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Message Sent!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
+          <p>Thank you for your message. I'll get back to you as soon as possible!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate Modal -->
+  <div class="modal fade certificate-modal" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="certificateModalLabel">Certificate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="certificateImage" src="" alt="Certificate" class="certificate-image">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="#" id="downloadCertificate" class="btn btn-primary-custom" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // Set default theme to dark mode
@@ -1497,6 +1495,8 @@
 
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    const themeText = themeToggle.querySelector('.theme-text');
 
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
@@ -1504,17 +1504,25 @@
     // Set initial theme based on saved preference
     if (savedTheme === 'light') {
       document.body.setAttribute('data-theme', 'light');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+      themeText.textContent = 'Dark Mode';
     } else {
       document.body.removeAttribute('data-theme');
+      themeIcon.classList.replace('fa-sun', 'fa-moon');
+      themeText.textContent = 'Light Mode';
     }
 
     // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
       if (document.body.getAttribute('data-theme') === 'light') {
         document.body.removeAttribute('data-theme');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        themeText.textContent = 'Light Mode';
         localStorage.setItem('theme', 'dark');
       } else {
         document.body.setAttribute('data-theme', 'light');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        themeText.textContent = 'Dark Mode';
         localStorage.setItem('theme', 'light');
       }
 
@@ -1571,7 +1579,7 @@
       }
     }
 
-    // Improved scroll animation for elements with medium speed
+    // Improved scroll animation for elements with faster speed for certifications and projects
     function checkScroll() {
       const fadeElements = document.querySelectorAll('.fade-in');
       const staggerElements = document.querySelectorAll('.stagger-item');
@@ -1591,9 +1599,14 @@
         const elementBottom = element.getBoundingClientRect().bottom;
 
         if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+          // Faster animations for certifications and projects
+          const delay = element.closest('#certifications') || element.closest('#projects') 
+            ? index * 50  // Faster: 50ms delay
+            : index * 100; // Normal: 100ms delay
+          
           setTimeout(() => {
             element.classList.add('visible');
-          }, index * 100); // Reduced to 100ms for medium speed
+          }, delay);
         }
       });
     }
@@ -1625,36 +1638,59 @@
       }
     });
 
-    // WhatsApp integration - Form submission
+    // Form submission handling - removed since we're only using WhatsApp
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
+    });
 
+    // WhatsApp Integration
+    document.getElementById('whatsappBtn').addEventListener('click', function() {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
       const subject = document.getElementById('subject').value;
       const message = document.getElementById('message').value;
       
-      if (!name || !email || !phone || !message) {
-        alert('Please fill in all required fields before sending a message.');
+      // Validate required fields
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields (Name, Email, and Message)');
         return;
       }
       
       // Format the message with bold text for important details
-      const whatsappMessage = `Hello Kishan!%0A%0A*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Subject:* ${subject}%0A*Message:* ${message}%0A%0A*Sent from your portfolio website*`;
+      const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject || 'Not specified'}%0A%0A*Message:*%0A${message}`;
       
-      // Your WhatsApp number
-      const whatsappURL = `https://wa.me/919316361979?text=${whatsappMessage}`;
+      // Your WhatsApp number (replace with your actual number)
+      const phoneNumber = '9316361979';
+      
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
       
       // Open WhatsApp in a new tab
-      window.open(whatsappURL, '_blank');
-      
-      // Reset the form
-      this.reset();
+      window.open(whatsappUrl, '_blank');
     });
 
     // Fix LinkedIn URL
     document.querySelector('a[href*="linkedin"]').href = "https://www.linkedin.com/in/kishan-parekh-b97190364";
+
+    // Certificate Modal Functionality
+    const certificateModal = document.getElementById('certificateModal');
+    const certificateImage = document.getElementById('certificateImage');
+    const downloadCertificate = document.getElementById('downloadCertificate');
+    
+    certificateModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const certificateSrc = button.getAttribute('data-certificate');
+      
+      // Set the certificate image source
+      certificateImage.src = certificateSrc;
+      
+      // Set the download link
+      downloadCertificate.href = certificateSrc;
+    });
+
+    // Set the About section to show only one image
+    const aboutImage = document.querySelector('.about-img-container img');
+    aboutImage.classList.add('active');
   </script>
 </body>
 

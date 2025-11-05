@@ -772,6 +772,24 @@
       justify-content: space-between;
     }
 
+    /* Resume Preview Modal Styles */
+    .resume-modal .modal-body {
+      padding: 0;
+      text-align: center;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .resume-modal .resume-image {
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .resume-modal .modal-footer {
+      display: flex;
+      justify-content: space-between;
+    }
+
     /* Mobile-specific adjustments */
     @media (max-width: 575.98px) {
       section {
@@ -999,7 +1017,7 @@
               </b> </p>
             <div class="d-flex flex-wrap fade-in">
               <a href="#contact" class="btn btn-primary-custom me-2 mb-2"><b>Get In Touch</b></a>
-              <a href="resume/r.png" class="btn btn-primary-custom mb-2" download><b>Download Resume</b></a>
+              <a href="#" class="btn btn-primary-custom mb-2" data-bs-toggle="modal" data-bs-target="#resumeModal"><b>View Resume</b></a>
             </div>
           </div>
         </div>
@@ -1482,6 +1500,25 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <a href="#" id="downloadCertificate" class="btn btn-primary-custom" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume Preview Modal -->
+  <div class="modal fade resume-modal" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <iframe id="resumeFrame" src="resume/Kishan Resume.pdf" width="100%" height="600px" style="border: none;"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+          <a href="resume/Kishan Resume.pdf" class="btn btn-primary-custom" download>Download Resume</a>
         </div>
       </div>
     </div>

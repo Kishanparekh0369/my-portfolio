@@ -1006,20 +1006,70 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-1 order-2">
-          <div class="hero-content">
-            <h1 class="hero-title fade-in">Hi, I'm Kishan Parekh</h1>
-            <h2 class="hero-subtitle fade-in"><b>Full Stack Developer</b></h2>
-            <p class="hero-description fade-in"><b>
-                ✨ "I specialize in building creative and modern websites that bring ideas to life. Having completed my
-                Bachelor's in Computer Applications and now pursuing my MCA, I'm passionate about learning,
-                experimenting,
-                and delivering user-friendly digital experiences that leave an impact."
-              </b> </p>
-            <div class="d-flex flex-wrap fade-in">
-              <a href="#contact" class="btn btn-primary-custom me-2 mb-2"><b>Get In Touch</b></a>
-              <a href="#" class="btn btn-primary-custom mb-2" data-bs-toggle="modal" data-bs-target="#resumeModal"><b>View Resume</b></a>
-            </div>
-          </div>
+     <div class="hero-content">
+  <h1 class="hero-title fade-in">Hi, I'm Kishan Parekh</h1>
+
+  <h2 class="hero-subtitle fade-in">
+    <span id="typing-text"></span>
+  </h2>
+
+  <p class="hero-description fade-in">
+    ✨ "I specialize in building creative and modern websites that bring ideas to life.
+    Passionate about learning and building user-friendly digital experiences."
+  </p>
+
+  <div class="d-flex flex-wrap fade-in">
+    <a href="#contact" class="btn btn-primary-custom me-2 mb-2"><b>Get In Touch</b></a>
+    <a href="#" class="btn btn-primary-custom mb-2" data-bs-toggle="modal" data-bs-target="#resumeModal"><b>View Resume</b></a>
+  </div>
+
+  <style>
+    #typing-text::after {
+      content: "|";
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+
+  <script>
+    const words = [
+      "Full Stack Developer",
+      "MERN Stack Learner",
+      "Problem Solver"
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById("typing-text");
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+
+      if (isDeleting) {
+        charIndex--;
+      } else {
+        charIndex++;
+      }
+
+      typingElement.textContent = currentWord.substring(0, charIndex);
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => isDeleting = true, 1200);
+      } 
+      else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+
+    typeEffect();
+  </script>
+</div>
         </div>
         <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
           <div class="hero-img-container fade-in">
@@ -1269,6 +1319,83 @@
         </div>
       </div>
     </div>
+
+  <div class="container">
+  <br>
+
+  <div class="education-card fade-in">
+    <div class="text-md-end">
+      <span class="education-degree"><b>Year : 2025 - 2027</b></span>
+    </div>
+
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+      <div>
+        <br>
+        <h3 class="education-degree"><b>Master of Computer Applications (MCA)</b></h3>
+        <h2 class="education-degree"><b>Sardar Patel University, Vallabh Vidyanagar</b></h2>
+        <p class="education-institution">
+          <b>G H Patel P G Department of Computer Science and Technology</b>
+        </p>
+
+        <p>
+          <b>CGPA : Result Awaited</b>
+        </p>
+
+        <p>
+          Currently pursuing <b>MCA</b> with a growing interest in 
+          <b>Full Stack Web Development</b>. 
+
+          I am actively learning modern technologies such as 
+          <b>React.js</b>, <b>Node.js</b>, and <b>MongoDB</b>, 
+          while strengthening my fundamentals in 
+          <b>Data Structures</b>, <b>Database Systems</b>, and 
+          <b>Software Development</b>.
+
+          <br><br>
+
+          Continuously improving my coding skills through practice projects, 
+          online learning resources, and academic assignments. 
+          Focused on building a strong foundation to become a 
+          professional <b>Full Stack Developer</b>.
+        </p>
+      </div>
+    </div>
+
+    <div class="cgpa-badge">
+      CGPA: Result Awaited 
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-6 col-md-4 col-lg-3 mb-3">
+        <div class="semester-card stagger-item">
+          <div class="semester-title">Semester 1</div>
+          <div class="semester-grade">7.76 GPA</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 mb-3">
+        <div class="semester-card stagger-item">
+          <div class="semester-title">Semester 2</div>
+          <div class="semester-grade">Result Awaited</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 mb-3">
+        <div class="semester-card stagger-item">
+          <div class="semester-title">Semester 3</div>
+          <div class="semester-grade">Result Awaited</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 mb-3">
+        <div class="semester-card stagger-item">
+          <div class="semester-title">Semester 4</div>
+          <div class="semester-grade">Result Awaited</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </section>
 
   <!-- Projects Section -->
@@ -1328,6 +1455,76 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-6 mb-4">
+  <div class="project-card stagger-item">
+    <img src="projects/hc.jpg" alt="Hair & Care Studio Website" class="project-img">
+    <div class="p-4">
+      <h3 class="project-title">Hair & Care Studio – Salon Booking Website</h3>
+      
+      <div class="project-tech mb-3">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Bootstrap</span>
+      </div>
+
+      <p>
+        Developed a fully responsive salon booking website with dynamic service rendering,
+        multi-service selection, custom form validation, and WhatsApp API integration 
+        for real-time appointment booking.
+      </p>
+
+      <div class="project-buttons">
+        <a href="https://github.com/Kishanparekh0369/Hair-Care-Studio" 
+           class="project-btn github-btn" target="_blank">
+          <i class="fab fa-github me-1"></i> GitHub
+        </a>
+
+        <a href="https://kishanparekh0369.github.io/Hair-Care-Studio/" 
+           class="project-btn demo-btn" target="_blank">
+          <i class="fas fa-external-link-alt me-1"></i> Live Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 mb-4">
+  <div class="project-card stagger-item">
+    <img src="projects/ttt.jpg" alt="Tic Tac Toe Game" class="project-img">
+    <div class="p-4">
+      <h3 class="project-title">Tic Tac Toe – Ultimate Edition</h3>
+      
+      <div class="project-tech mb-3">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Bootstrap</span>
+      </div>
+
+      <p>
+        Developed an advanced Tic Tac Toe game with AI difficulty levels 
+        (Easy, Medium, Hard), dynamic UI updates, localStorage-based 
+        statistics tracking, image upload support, and responsive design.
+      </p>
+
+      <div class="project-buttons">
+        <a href="https://github.com/Kishanparekh0369/Kishan_Game" 
+           class="project-btn github-btn" target="_blank">
+          <i class="fab fa-github me-1"></i> GitHub
+        </a>
+
+        <a href="https://kishanparekh0369.github.io/Kishan_Game/" 
+           class="project-btn demo-btn" target="_blank">
+          <i class="fas fa-external-link-alt me-1"></i> Live Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
       </div>
     </div>
   </section>
@@ -1368,14 +1565,25 @@
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="certification-card stagger-item">
-            <h3 class="certification-name">Youth Red Cross Member</h3>
-            <p class="certification-issuer mb-1">Gujarat Red Cross</p>
-            <p class="certification-date mb-2">2023-2024</p>
-            <p>Active member of the Youth Red Cross organization, participating in various social activities.</p>
-            <a href="#" class="certification-btn" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate="images/c3.jpg">View Certificate</a>
-          </div>
-        </div>
+  <div class="certification-card stagger-item">
+    <h3 class="certification-name">State Level Programming Competition</h3>
+    <p class="certification-issuer mb-1">
+      P.G. Department of Computer Science & Technology, Sardar Patel University
+    </p>
+    <p class="certification-date mb-2">Tech-Fest 2026 | 14 February 2026</p>
+    <p>
+      Participated in the State Level Programming Competition (Post-Graduate Level)
+      as part of a two-member team during Tech-Fest 2026 organized by
+      Sardar Patel University, Vallabh Vidyanagar.
+    </p>
+    <a href="#" class="certification-btn"
+       data-bs-toggle="modal"
+       data-bs-target="#certificateModal"
+       data-certificate="images/tf.jpg">
+       View Certificate
+    </a>
+  </div>
+</div>
       </div>
     </div>
   </section>
@@ -1732,6 +1940,7 @@
 </body>
 
 </html>
+
 
 
 

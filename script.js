@@ -224,4 +224,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 9. Certifications Modal Logic ---
+  const certBtns = document.querySelectorAll('.certification-btn');
+  const certModal = document.getElementById('certificateModal');
+  const modalImg = document.getElementById('modalCertificateImg');
+  
+  if (certModal) {
+    const closeBtn = certModal.querySelector('.modal-close');
+    
+    certBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const imgSrc = btn.getAttribute('data-certificate');
+        if (imgSrc && modalImg) {
+          modalImg.src = imgSrc;
+          certModal.classList.add('active');
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      certModal.classList.remove('active');
+    });
+
+    certModal.addEventListener('click', (e) => {
+      if (e.target === certModal) {
+        certModal.classList.remove('active');
+      }
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && certModal.classList.contains('active')) {
+        certModal.classList.remove('active');
+      }
+    });
+  }
+
 });

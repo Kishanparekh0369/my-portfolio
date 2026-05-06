@@ -2,10 +2,14 @@
 
 :root {
   /* Dark Theme Colors */
-  --bg-primary: rgba(5, 8, 20, 0.5);    /* Semi-transparent to show Vanta */
-  --bg-secondary: rgba(11, 17, 32, 0.6);
-  --bg-tertiary: rgba(17, 24, 39, 0.7);
-  --bg-overlay: rgba(5, 8, 20, 0.3);
+  --bg-primary: rgba(10, 10, 12, 0.6);
+  --bg-secondary: rgba(15, 15, 18, 0.7);
+  --bg-tertiary: rgba(20, 20, 24, 0.8);
+  
+  --bg-base: #050505;
+  --bg-grid: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+             linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  --bg-glow: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15), transparent 80%);
   
   --accent-primary: #8B5CF6; /* Neon Purple */
   --accent-secondary: #3B82F6; /* Neon Blue */
@@ -28,10 +32,14 @@
 }
 
 [data-theme="light"] {
-  --bg-primary: rgba(248, 250, 252, 0.75);
-  --bg-secondary: rgba(255, 255, 255, 0.85);
-  --bg-tertiary: rgba(241, 245, 249, 0.9);
-  --bg-overlay: rgba(248, 250, 252, 0.95);
+  --bg-primary: rgba(255, 255, 255, 0.7);
+  --bg-secondary: rgba(250, 250, 250, 0.8);
+  --bg-tertiary: rgba(245, 245, 245, 0.9);
+  
+  --bg-base: #fafafa;
+  --bg-grid: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+             linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  --bg-glow: radial-gradient(ellipse at 50% 0%, rgba(109, 40, 217, 0.12), transparent 80%);
   
   --accent-primary: #6D28D9; 
   --accent-secondary: #2563EB;
@@ -100,8 +108,11 @@ body {
   color: var(--text-main);
   line-height: 1.7;
   overflow-x: hidden;
-  transition: color 0.4s ease;
-  background-color: transparent; /* Rely on Vanta script for base color or body fallback */
+  transition: color 0.4s ease, background-color 0.4s ease;
+  background-color: var(--bg-base);
+  background-image: var(--bg-grid), var(--bg-glow);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  background-attachment: fixed;
 }
 
 ul { list-style: none; }
@@ -115,27 +126,7 @@ b, strong { color: var(--text-main); font-weight: 700; }
   padding: 0 clamp(1.5rem, 5vw, 2.5rem); /* responsive horizontal padding */
 }
 
-/* Full Screen Vanta Background */
-#vanta-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2;
-  pointer-events: auto; /* Allows mouse interactions (Vanta tracks global mouse generally anyway) */
-}
 
-/* Background Overlay for Contrast */
-.bg-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-  background: var(--bg-overlay);
-  transition: background 0.4s ease;
-}
 
 /* Glassmorphism Utilities */
 .glass-panel {

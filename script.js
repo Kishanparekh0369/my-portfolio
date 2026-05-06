@@ -27,37 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 3. Init Vanta.js Network Background ---
-  let vantaEffect = null;
-  const initVanta = (theme) => {
-    // Prevent re-init if already running
-    if(vantaEffect) vantaEffect.destroy();
 
-    // Setup colors based on theme
-    const isLight = theme === 'light';
-    const bgColor = isLight ? 0xF8FAFC : 0x050814;
-    const color = isLight ? 0x2563EB : 0x8B5CF6; // Blue in light, Neon Purple in dark
-    const backgroundColor = isLight ? 0x6D28D9 : 0x3B82F6; // Accent in light, Neon Blue in dark
-
-    if(typeof VANTA !== 'undefined') {
-      vantaEffect = VANTA.NET({
-        el: "#vanta-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: color,
-        backgroundColor: bgColor,
-        points: 12.00,
-        maxDistance: 22.00,
-        spacing: 18.00,
-        showDots: true
-      });
-    }
-  };
 
 
   // --- 4. Theme Toggle Logic ---
@@ -71,8 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeIcon.classList.replace('fa-moon', 'fa-sun');
   }
   
-  // Initialize Vanta with current theme
-  initVanta(savedTheme);
+
 
   // --- 5. Mobile Menu Toggle ---
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -126,8 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     localStorage.setItem('theme', targetTheme);
-    // Dynamically update Vanta background on theme change
-    initVanta(targetTheme);
+
   });
 
   // --- 6. Navbar Scroll Effect & Active Link Spy ---

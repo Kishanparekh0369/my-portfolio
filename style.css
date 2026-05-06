@@ -67,6 +67,9 @@ html {
   font-size: 20px;
   transition: 0.3s;
 }
+.social-links a .fa-hackerrank {
+  color: #2EC866;
+}
 
 /* LinkedIn */
 .social-links a:nth-child(1) i {

@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backToTopBtn.classList.add('visible');
       } else {
         backToTopBtn.classList.remove('visible');
-      }
+      } 
     });
 
     backToTopBtn.addEventListener('click', () => {

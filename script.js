@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         certModal.classList.remove('active');
-      });
+      }); 
     }
 
     certModal.addEventListener('click', (e) => {

@@ -20,10 +20,23 @@
     <!-- Scroll Animations (AOS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- Google Fonts for Gaming / Cyberpunk UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Ambient Cyber Glow & Background Canvas -->
+    <canvas id="cyberCanvas" class="cyber-canvas"></canvas>
+    <div class="cyber-grid-overlay"></div>
+    <div class="cyber-scanlines"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- Overlay for Mobile Navbar -->
     <div class="nav-overlay" id="navOverlay"></div>
@@ -132,6 +145,13 @@
 
         <div class="about-grid">
           <div class="about-img-box" data-aos="fade-right">
+            <!-- Clean Cyberpunk Corner HUD -->
+            <div class="about-hud-frame">
+              <div class="hud-corner hud-corner-tl"></div>
+              <div class="hud-corner hud-corner-tr"></div>
+              <div class="hud-corner hud-corner-bl"></div>
+              <div class="hud-corner hud-corner-br"></div>
+            </div>
             <img src="images/profile.jpg" alt="Kishan Parekh Profile" />
           </div>
 
